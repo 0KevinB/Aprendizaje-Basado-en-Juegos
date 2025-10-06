@@ -34,6 +34,7 @@ export default function ProgresoPage() {
     if (user) {
       loadUserProgress();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   const loadUserProgress = async () => {

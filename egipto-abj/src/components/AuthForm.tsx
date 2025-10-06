@@ -33,8 +33,8 @@ export function AuthForm() {
       } else {
         await signIn(email, password);
       }
-    } catch (err: any) {
-      setError(err.message || 'Ocurrió un error. Intenta de nuevo.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Ocurrió un error. Intenta de nuevo.');
     } finally {
       setLoading(false);
     }

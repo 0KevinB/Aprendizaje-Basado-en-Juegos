@@ -84,7 +84,11 @@ const missions: Mission[] = [
 export default function MisionesPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
-  const [userProgress, setUserProgress] = useState<any>(null);
+  const [userProgress, setUserProgress] = useState<{
+    totalPoints: number;
+    completedMissions: string[];
+    missionProgress: Record<string, { progress: number }>;
+  } | null>(null);
   const [loadingProgress, setLoadingProgress] = useState(true);
 
   useEffect(() => {
@@ -96,6 +100,7 @@ export default function MisionesPage() {
     if (user) {
       loadUserProgress();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   const loadUserProgress = async () => {
@@ -104,7 +109,12 @@ export default function MisionesPage() {
     try {
       const progressDoc = await getDoc(doc(db, 'userProgress', user.uid));
       if (progressDoc.exists()) {
-        setUserProgress(progressDoc.data());
+        const data = progressDoc.data();
+        setUserProgress({
+          totalPoints: data.totalPoints || 0,
+          completedMissions: data.completedMissions || [],
+          missionProgress: data.missionProgress || {},
+        });
       } else {
         setUserProgress({
           totalPoints: 0,

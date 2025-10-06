@@ -35,6 +35,7 @@ export default function JuegoPage() {
     // Generar preguntas dinámicas
     const generatedQuestions = generateGameQuestions(missionId);
     setQuestions(generatedQuestions);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, missionId]);
 
   const currentQuestion = questions[currentQuestionIndex];
