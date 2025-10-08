@@ -9,7 +9,11 @@
       "Bash(npm run build:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(sed:*)",
+      "Bash(npm run lint)",
+      "Bash(pandoc:*)",
+      "Bash(unzip:*)"
     ],
     "deny": [],
     "ask": []

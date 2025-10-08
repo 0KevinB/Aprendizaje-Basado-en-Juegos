@@ -95,7 +95,7 @@ export default function RecursosPage() {
       </section>
 
       <Tabs defaultValue="biblioteca" className="w-full">
-        <TabsList className="grid w-full grid-cols-3 mb-8 bg-transparent p-0 gap-2 h-auto">
+        <TabsList className="grid w-full grid-cols-4 mb-8 bg-transparent p-0 gap-2 h-auto">
           <TabsTrigger
             value="biblioteca"
             className="data-[state=active]:bg-[#FFD700] data-[state=active]:text-[#0f1e30] data-[state=active]:border-[#FFD700] bg-[#C19A6B] text-white text-lg font-bold transition-all py-4 rounded-lg border-4 border-transparent hover:border-[#FFD700] hover:bg-[#D4A76A]"
@@ -113,6 +113,12 @@ export default function RecursosPage() {
             className="data-[state=active]:bg-[#FFD700] data-[state=active]:text-[#0f1e30] data-[state=active]:border-[#FFD700] bg-[#C19A6B] text-white text-lg font-bold transition-all py-4 rounded-lg border-4 border-transparent hover:border-[#FFD700] hover:bg-[#D4A76A]"
           >
             🎮 Actividades
+          </TabsTrigger>
+          <TabsTrigger
+            value="objetivos"
+            className="data-[state=active]:bg-[#FFD700] data-[state=active]:text-[#0f1e30] data-[state=active]:border-[#FFD700] bg-[#C19A6B] text-white text-lg font-bold transition-all py-4 rounded-lg border-4 border-transparent hover:border-[#FFD700] hover:bg-[#D4A76A]"
+          >
+            🎯 Objetivos
           </TabsTrigger>
         </TabsList>
 
@@ -203,6 +209,187 @@ export default function RecursosPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </TabsContent>
+
+        {/* Objetivos Educativos */}
+        <TabsContent value="objetivos">
+          <div className="space-y-8">
+            {/* Información Institucional */}
+            <Card className="border-4 border-[#FFD700] bg-gradient-to-br from-[#f5f1e8] to-[#E6BE8A]">
+              <CardHeader>
+                <CardTitle className="text-3xl font-serif text-[#0f1e30] text-center">
+                  📋 Información del Programa Educativo
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Institución</h3>
+                    <p className="text-[#1e3a5f]">UNIDADES EDUCATIVAS MUNICIPALES DE LOJA</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Área</h3>
+                    <p className="text-[#1e3a5f]">Ciencias Sociales</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Grado</h3>
+                    <p className="text-[#1e3a5f]">Octavo Año EGB</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Asignatura</h3>
+                    <p className="text-[#1e3a5f]">Estudios Sociales</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Objetivo de la Unidad */}
+            <Card className="border-4 border-[#40E0D0] bg-white">
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
+                  🎯 Objetivo de la Unidad Didáctica
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-6 rounded-lg border-2 border-[#C19A6B]">
+                  <p className="text-lg text-[#0f1e30] font-semibold leading-relaxed">
+                    Conocer los aportes culturales de las primeras civilizaciones y su influencia en la actualidad.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Destreza con Criterio de Desempeño */}
+            <Card className="border-4 border-[#FFD700] bg-white">
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
+                  📚 Destreza con Criterio de Desempeño
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-gradient-to-r from-[#FFD700] to-[#E6BE8A] p-6 rounded-lg border-2 border-[#B8860B]">
+                  <div className="mb-3">
+                    <span className="font-bold text-[#0f1e30] text-lg">CS.H.5.1.16.</span>
+                  </div>
+                  <p className="text-base text-[#0f1e30] font-semibold leading-relaxed">
+                    Describir y valorar los grandes aportes de la cultura de Egipto al desarrollo tecnológico,
+                    económico y científico desde la perspectiva de su condición de &quot;cuna de la humanidad&quot;.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Indicador de Evaluación */}
+            <Card className="border-4 border-[#CD7F32] bg-white">
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
+                  ✅ Indicador de Evaluación de la Unidad
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-gradient-to-r from-[#CD7F32] to-[#D4A76A] p-6 rounded-lg border-2 border-[#A0522D]">
+                  <div className="mb-3">
+                    <span className="font-bold text-white text-lg">I.CS.H.5.5.1.</span>
+                  </div>
+                  <p className="text-base text-white font-semibold leading-relaxed">
+                    Describe los aportes tecnológicos, económicos y científicos de la cultura de Egipto
+                    y su impacto en el mundo contemporáneo. (J.1., J.4., I.1.)
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Aportes del Antiguo Egipto */}
+            <Card className="border-4 border-[#40E0D0] bg-white">
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
+                  💡 Principales Aportes del Antiguo Egipto
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
+                    <div className="text-4xl mb-3 text-center">🏗️</div>
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Tecnológicos</h3>
+                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
+                      <li>Construcción con piedra tallada</li>
+                      <li>Sistemas de riego y agricultura</li>
+                      <li>Navegación fluvial</li>
+                      <li>Técnicas de momificación</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
+                    <div className="text-4xl mb-3 text-center">💰</div>
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Económicos</h3>
+                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
+                      <li>Sistema de comercio organizado</li>
+                      <li>Agricultura planificada</li>
+                      <li>Primeras formas de impuestos</li>
+                      <li>Especialización laboral</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
+                    <div className="text-4xl mb-3 text-center">🔬</div>
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Científicos</h3>
+                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
+                      <li>Medicina avanzada y cirugía</li>
+                      <li>Astronomía y calendario solar</li>
+                      <li>Matemáticas y geometría</li>
+                      <li>Química y embalsamamiento</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
+                    <div className="text-4xl mb-3 text-center">📖</div>
+                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Culturales</h3>
+                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
+                      <li>Sistema de escritura (jeroglíficos)</li>
+                      <li>Papiro (precursor del papel)</li>
+                      <li>Arte y arquitectura monumental</li>
+                      <li>Literatura y poesía</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Metodología ABJ */}
+            <Card className="border-4 border-[#FFD700] bg-gradient-to-r from-green-50 to-green-100">
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif text-green-900">
+                  🎮 Metodología: Aprendizaje Basado en Juegos (ABJ)
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-base text-green-800 leading-relaxed">
+                  Esta plataforma utiliza la metodología de <strong>Aprendizaje Basado en Juegos</strong>,
+                  que combina elementos de gamificación con objetivos educativos claros para:
+                </p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-600">
+                    <div className="text-3xl mb-2 text-center">🧠</div>
+                    <h4 className="font-bold text-green-900 mb-2 text-center">Motivar</h4>
+                    <p className="text-sm text-green-800 text-center">
+                      Aumentar el engagement y la participación activa
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-600">
+                    <div className="text-3xl mb-2 text-center">👥</div>
+                    <h4 className="font-bold text-green-900 mb-2 text-center">Colaborar</h4>
+                    <p className="text-sm text-green-800 text-center">
+                      Fomentar el trabajo en equipo y roles definidos
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border-2 border-green-600">
+                    <div className="text-3xl mb-2 text-center">📈</div>
+                    <h4 className="font-bold text-green-900 mb-2 text-center">Evaluar</h4>
+                    <p className="text-sm text-green-800 text-center">
+                      Medir el progreso de forma continua y formativa
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </TabsContent>
       </Tabs>

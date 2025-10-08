@@ -38,12 +38,10 @@ export interface Mission {
 }
 
 export type GameType =
-  | 'hieroglyphics'
-  | 'pyramids'
-  | 'pharaohs'
-  | 'gods'
-  | 'daily-life'
-  | 'mummification';
+  | 'secreto-nilo'
+  | 'consejo-faraon'
+  | 'secretos-nilo'
+  | 'gran-reto-nilo';
 
 export interface GameQuestion {
   id: string;

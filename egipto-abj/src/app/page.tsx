@@ -52,7 +52,7 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <CardDescription className="text-base text-center text-[#1e3a5f] font-medium leading-relaxed">
-              Completa 6 misiones únicas que te enseñarán sobre jeroglíficos, pirámides, faraones y más.
+              Completa 4 misiones épicas que te revelarán los secretos del Antiguo Egipto y sus aportes a la humanidad.
             </CardDescription>
           </CardContent>
         </Card>
@@ -94,7 +94,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6 text-center">
           <div className="bg-white/15 rounded-2xl p-6 backdrop-blur border-2 border-white/20 hover:bg-white/25 transition-all">
             <div className="text-5xl mb-3">📚</div>
-            <div className="text-4xl font-bold text-[#FFD700] mb-2">6</div>
+            <div className="text-4xl font-bold text-[#FFD700] mb-2">4</div>
             <div className="text-lg font-semibold text-white">Misiones Épicas</div>
           </div>
           <div className="bg-white/15 rounded-2xl p-6 backdrop-blur border-2 border-white/20 hover:bg-white/25 transition-all">
