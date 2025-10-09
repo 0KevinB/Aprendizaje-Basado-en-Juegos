@@ -13,7 +13,9 @@
       "Bash(sed:*)",
       "Bash(npm run lint)",
       "Bash(pandoc:*)",
-      "Bash(unzip:*)"
+      "Bash(unzip:*)",
+      "WebSearch",
+      "WebFetch(domain:www.youtube.com)"
     ],
     "deny": [],
     "ask": []

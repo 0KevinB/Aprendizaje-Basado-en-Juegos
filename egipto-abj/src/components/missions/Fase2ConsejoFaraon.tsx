@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input';
 
 interface Fase2Props {
@@ -31,40 +30,40 @@ const triviaQuestions = [
   {
     question: '¿Cuál era la base de la economía egipcia según el texto?',
     options: [
-      'El comercio de oro',
-      'La agricultura (el Nilo), pesca y planta del papiro',
-      'La guerra',
-      'La minería'
+      'El comercio de metales preciosos',
+      'La agricultura gracias al Nilo',
+      'La construcción de monumentos',
+      'El tributo de territorios conquistados'
     ],
     correct: 1,
   },
   {
     question: '¿Dónde vivían los artesanos, mercaderes y campesinos?',
     options: [
-      'En palacios',
-      'En templos',
+      'En villas junto al palacio',
+      'En barrios cerca de los templos',
       'En ciudades o aldeas pequeñas',
-      'En pirámides'
+      'En campamentos junto al Nilo'
     ],
     correct: 2,
   },
   {
     question: '¿Para qué se utilizaba el papiro además de escribir?',
     options: [
-      'Solo para escribir',
-      'Construir embarcaciones, elaborar cestos y sandalias',
-      'Como alimento',
-      'Para hacer ropa'
+      'Para tejer textiles finos',
+      'Construir embarcaciones y cestos',
+      'Como material de construcción',
+      'Para elaborar medicamentos'
     ],
     correct: 1,
   },
   {
     question: '¿Qué tipo de gobierno tenía Egipto?',
     options: [
-      'Democracia',
-      'Monárquico teocrático (el faraón hijo de los dioses)',
-      'República',
-      'Anarquía'
+      'República con consejo de nobles',
+      'Monárquico teocrático',
+      'Confederación de ciudades',
+      'Imperio con senado'
     ],
     correct: 1,
   },

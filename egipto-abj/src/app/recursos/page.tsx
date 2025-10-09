@@ -17,59 +17,392 @@ interface Resource {
 
 const bibliotecaRecursos: Resource[] = [
   {
+    id: 'jeroglificos',
+    title: 'Los Jeroglíficos Egipcios',
+    description: 'El sistema de escritura del Antiguo Egipto',
+    icon: '📝',
+    content: `Los jeroglíficos eran el sistema de escritura sagrado de Egipto. Este sistema combinaba símbolos fonéticos (que representan sonidos) y pictóricos (que representan objetos o ideas).
+
+El alfabeto jeroglífico contenía 28 consonantes básicas, aunque el sistema completo incluía más de 700 símbolos diferentes. Solo los escribas, que pasaban años en entrenamiento, aprendían a leerlos y escribirlos, lo que les daba un estatus especial en la sociedad egipcia.
+
+Los jeroglíficos se usaban principalmente en templos, tumbas y monumentos, mientras que para documentos cotidianos se usaba una escritura más simple llamada hierática. La Piedra Rosetta, descubierta en 1799, fue clave para descifrar este antiguo sistema de escritura.`,
+  },
+  {
+    id: 'faraon-sociedad',
+    title: 'El Faraón y la Sociedad Egipcia',
+    description: 'Estructura social del Antiguo Egipto',
+    icon: '👑',
+    content: `La sociedad egipcia estaba organizada en una rígida pirámide social:
+
+1. FARAÓN: En la cima, considerado un dios viviente. Era el líder político, militar y religioso.
+
+2. SACERDOTES Y NOBLES: Administraban templos, tierras y el gobierno. Vivían en palacios y tenían gran poder.
+
+3. ESCRIBAS: Eran los letrados de la sociedad. Registraban impuestos, llevaban cuentas y escribían documentos importantes.
+
+4. ARTESANOS Y COMERCIANTES: Creaban objetos, joyas, herramientas y comerciaban con otros pueblos.
+
+5. CAMPESINOS: La mayoría de la población. Trabajaban la tierra durante las inundaciones del Nilo.
+
+6. ESCLAVOS: Generalmente prisioneros de guerra, realizaban trabajos forzados.
+
+Esta estructura se mantuvo casi sin cambios durante más de 3,000 años.`,
+  },
+  {
     id: 'nilo',
     title: 'El Río Nilo',
     description: 'La fuente de vida del Antiguo Egipto',
     icon: '🌊',
-    content: `El Río Nilo fue fundamental para el desarrollo de la civilización egipcia. Sus inundaciones anuales depositaban limo fértil en las orillas, permitiendo la agricultura. Los egipcios llamaban a su tierra "Kemet" (tierra negra) por el color del suelo fértil.`,
+    content: `El Río Nilo, con aproximadamente 6,850 km de longitud, fue absolutamente fundamental para el desarrollo de la civilización egipcia. Sin el Nilo, Egipto habría sido solo desierto.
+
+INUNDACIONES ANUALES: Cada año, entre junio y septiembre, el Nilo se desbordaba e inundaba los campos. Cuando las aguas retrocedían, dejaban una capa de limo negro muy fértil que permitía cultivar trigo, cebada, lino y papiro.
+
+GEOGRAFÍA: El Nilo nace en el lago Victoria (África central) y fluye hacia el norte, desembocando en el Mar Mediterráneo formando un gran delta. Los egipcios llamaban a su tierra "Kemet" (tierra negra) por el color del suelo fértil, y al desierto "Deshret" (tierra roja).
+
+TRANSPORTE: El Nilo era la principal autopista de Egipto. Los barcos navegaban río abajo con la corriente y río arriba aprovechando los vientos del norte.`,
   },
   {
-    id: 'piramides-construccion',
-    title: 'Construcción de Pirámides',
-    description: 'Cómo se construyeron las maravillas',
+    id: 'dioses',
+    title: 'Los Dioses del Antiguo Egipto',
+    description: 'Religión y creencias egipcias',
+    icon: '🏺',
+    content: `Los egipcios adoraban a más de 1,500 dioses diferentes. Aquí están los más importantes:
+
+RA: El dios del sol, representado con cabeza de halcón. Era el creador del universo y navegaba por el cielo en su barca solar.
+
+OSIRIS: Dios del inframundo y la resurrección. Juez de los muertos y símbolo de la vida eterna.
+
+ISIS: Diosa de la magia y la maternidad. Esposa de Osiris y madre de Horus. Protectora de los niños.
+
+ANUBIS: Dios de la momificación, con cabeza de chacal. Guiaba a las almas al más allá y presidía el pesaje del corazón.
+
+HORUS: Dios del cielo con cabeza de halcón. Hijo de Osiris e Isis, protector de los faraones.
+
+THOTH: Dios de la sabiduría y la escritura, representado como un ibis. Inventor de los jeroglíficos.
+
+BASTET: Diosa con forma de gato, protectora del hogar y la fertilidad.`,
+  },
+  {
+    id: 'momificacion',
+    title: 'El Proceso de Momificación',
+    description: 'Preparación para la vida eterna',
+    icon: '⚰️',
+    content: `Los egipcios creían que para alcanzar la vida eterna, el cuerpo debía preservarse. El proceso de momificación tomaba 70 días:
+
+DÍAS 1-4: Se lavaba el cuerpo con agua del Nilo y vino de palma. Se extraían los órganos internos excepto el corazón (considerado centro del alma).
+
+DÍAS 5-40: El cuerpo se cubría con natrón (una sal natural) para secarlo completamente.
+
+DÍAS 41-60: Se rellenaba el cuerpo con lino, aserrín y especias aromáticas. Se aplicaban aceites y resinas.
+
+DÍAS 61-70: Se envolvía el cuerpo con vendas de lino (hasta 375 m²). Entre las vendas se colocaban amuletos protectores. Se colocaba una máscara sobre la cara.
+
+Los órganos extraídos se guardaban en 4 vasos canopos, cada uno protegido por un dios diferente. Solo los ricos podían permitirse este elaborado proceso.`,
+  },
+  {
+    id: 'piramides',
+    title: 'Las Pirámides de Egipto',
+    description: 'Tumbas monumentales de los faraones',
     icon: '🔺',
-    content: `Las pirámides se construyeron usando millones de bloques de piedra caliza. Los trabajadores (no esclavos) usaban rampas, palancas y trabajo en equipo. La Gran Pirámide de Giza tiene más de 2.3 millones de bloques.`,
-  },
-  {
-    id: 'escritura',
-    title: 'Sistema de Escritura',
-    description: 'Los jeroglíficos egipcios',
-    icon: '📝',
-    content: `Los jeroglíficos eran el sistema de escritura sagrado de Egipto. Combinaban símbolos fonéticos y pictóricos. Solo los escribas aprendían a leerlos y escribirlos, lo que les daba un estatus especial.`,
+    content: `Las pirámides son las estructuras más emblemáticas del Antiguo Egipto. Servían como tumbas para los faraones y símbolos de su poder divino.
+
+LA GRAN PIRÁMIDE DE KEOPS (Giza): La más grande de todas. Construida alrededor del 2560 a.C., tiene 146 metros de altura (originalmente) y está compuesta por aproximadamente 2.3 millones de bloques de piedra caliza, cada uno pesando entre 2 y 15 toneladas.
+
+CONSTRUCCIÓN: Contrario al mito popular, las pirámides NO fueron construidas por esclavos, sino por trabajadores egipcios pagados. Se estima que 100,000 trabajadores participaron en turnos rotatorios. Usaban rampas, palancas, trineos y trabajo organizado.
+
+PROPÓSITO: Además de tumba, las pirámides eran máquinas de ascensión. Los egipcios creían que el faraón muerto ascendería al cielo para unirse con Ra, el dios sol.
+
+Se construyeron más de 130 pirámides en Egipto, pero las tres de Giza son las más famosas.`,
   },
 ];
 
-const videosEducativos: Resource[] = [
+interface VideoResource extends Resource {
+  videoUrl: string;
+  duration?: string;
+}
+
+const videosEducativos: VideoResource[] = [
   {
-    id: 'video-piramides',
-    title: 'Las Pirámides de Giza',
-    description: 'Documental sobre las grandes pirámides',
+    id: 'video-antiguo-egipto',
+    title: 'EL ANTIGUO EGIPTO | Vídeos Educativos para Niños',
+    description: 'Introducción completa al Antiguo Egipto',
     icon: '🎥',
-    content: 'Las tres pirámides principales de Giza fueron construidas por los faraones Keops, Kefrén y Micerinos. Son las únicas de las Siete Maravillas del Mundo Antiguo que aún existen.',
+    videoUrl: 'https://www.youtube.com/embed/5qXgipbSuYY',
+    duration: '5:39',
+    content: 'Video educativo que explica de manera didáctica la importancia del Río Nilo como fuente de vida, los faraones, la construcción de pirámides, los dioses egipcios como Bastet y el dios Halcón, y la organización social de esta fascinante civilización.',
   },
   {
-    id: 'video-tutankamon',
-    title: 'El Tesoro de Tutankamón',
-    description: 'Descubrimiento de la tumba intacta',
-    icon: '🎬',
-    content: 'En 1922, Howard Carter descubrió la tumba de Tutankamón casi intacta. Contenía más de 5,000 objetos, incluyendo la famosa máscara de oro del faraón.',
+    id: 'video-jeroglificos',
+    title: 'Jeroglíficos Egipcios - Cómo Funcionaban',
+    description: 'Descubre el sistema de escritura egipcio',
+    icon: '📜',
+    videoUrl: 'https://www.youtube.com/embed/zOwP0KUlnZg',
+    duration: '10:24',
+    content: 'Explicación detallada sobre cómo funcionaban los jeroglíficos egipcios, incluyendo el alfabeto jeroglífico, símbolos fonéticos y pictóricos, y el papel fundamental de los escribas en la sociedad del Antiguo Egipto.',
+  },
+  {
+    id: 'video-nilo',
+    title: 'El Río Nilo - Geografía del Antiguo Egipto',
+    description: 'La importancia del Nilo para Egipto',
+    icon: '🌊',
+    videoUrl: 'https://www.youtube.com/embed/lCv_MLla4gA',
+    duration: '8:15',
+    content: 'Documental educativo sobre el Río Nilo, sus inundaciones anuales, cómo el limo fértil permitía la agricultura, y por qué los egipcios llamaban a su tierra "Kemet" (tierra negra). Incluye información sobre geografía y transporte fluvial.',
+  },
+  {
+    id: 'video-piramides',
+    title: 'Las Pirámides de Egipto - Construcción',
+    description: 'Cómo se construyeron las pirámides',
+    icon: '🔺',
+    videoUrl: 'https://www.youtube.com/embed/TJEhRB7prqI',
+    duration: '12:30',
+    content: 'Video que explica el proceso de construcción de las pirámides, desmintiendo mitos sobre esclavos y mostrando las técnicas reales utilizadas: rampas, palancas, trineos y organización laboral. Incluye datos sobre la Gran Pirámide de Keops.',
+  },
+  {
+    id: 'video-dioses',
+    title: 'Dioses Egipcios - Mitología',
+    description: 'Los principales dioses del Antiguo Egipto',
+    icon: '🏺',
+    videoUrl: 'https://www.youtube.com/embed/fZlMIb9DYAE',
+    duration: '15:20',
+    content: 'Recorrido por los principales dioses egipcios: Ra (dios del sol), Osiris (inframundo), Isis (magia), Anubis (momificación), Horus (cielo), Thoth (sabiduría) y Bastet (protección del hogar). Explica sus roles y representaciones.',
+  },
+  {
+    id: 'video-momificacion',
+    title: 'Momificación en el Antiguo Egipto',
+    description: 'El proceso de preservación de los cuerpos',
+    icon: '⚰️',
+    videoUrl: 'https://www.youtube.com/embed/JACoS_OxwAY',
+    duration: '11:45',
+    content: 'Explicación paso a paso del proceso de momificación que tomaba 70 días. Incluye información sobre la extracción de órganos, el uso de natrón, el vendaje del cuerpo, los vasos canopos y las creencias egipcias sobre la vida eterna.',
+  },
+  {
+    id: 'video-faraones',
+    title: 'Los Faraones y la Pirámide Social Egipcia',
+    description: 'Estructura social del Antiguo Egipto',
+    icon: '👑',
+    videoUrl: 'https://www.youtube.com/embed/VN7qCe9Uqfc',
+    duration: '9:30',
+    content: 'Video educativo sobre la organización social egipcia en forma de pirámide: faraón, sacerdotes y nobles, escribas, artesanos y comerciantes, campesinos y esclavos. Explica el rol divino del faraón y la rigidez de la estructura social.',
+  },
+  {
+    id: 'video-vida-cotidiana',
+    title: 'La Vida Cotidiana en el Antiguo Egipto',
+    description: 'Cómo vivían los egipcios',
+    icon: '🏠',
+    videoUrl: 'https://www.youtube.com/embed/2hi08tOUkUM',
+    duration: '13:15',
+    content: 'Documental sobre la vida diaria de los egipcios: sus casas, alimentación, vestimenta, juegos, educación y trabajo. Muestra las diferencias entre la vida de nobles y campesinos, y costumbres como el uso de maquillaje y pelucas.',
   },
 ];
 
 const actividadesInteractivas: Resource[] = [
   {
     id: 'timeline',
-    title: 'Línea de Tiempo',
-    description: 'Explora las dinastías egipcias',
+    title: 'Línea de Tiempo del Antiguo Egipto',
+    description: 'Cronología de 3,000 años de historia',
     icon: '📅',
-    content: 'La historia del Antiguo Egipto se divide en tres periodos principales: Reino Antiguo (pirámides), Reino Medio (expansión) y Reino Nuevo (apogeo del imperio).',
+    content: `La historia del Antiguo Egipto abarca aproximadamente 3,000 años (desde el 3100 a.C. hasta el 30 a.C.) y se divide en periodos principales:
+
+PERIODO PREDINÁSTICO (5500-3100 a.C.): Primeros asentamientos a orillas del Nilo.
+
+PERIODO DINÁSTICO TEMPRANO (3100-2686 a.C.): Unificación del Alto y Bajo Egipto por el faraón Narmer. Primeras dinastías I y II.
+
+REINO ANTIGUO (2686-2181 a.C.): Época de las grandes pirámides (Keops, Kefrén, Micerinos). Dinastías III a VI. Capital: Menfis.
+
+PRIMER PERIODO INTERMEDIO (2181-2055 a.C.): Crisis política y fragmentación.
+
+REINO MEDIO (2055-1650 a.C.): Reunificación de Egipto. Expansión territorial. Dinastías XI y XII. Capital: Tebas.
+
+SEGUNDO PERIODO INTERMEDIO (1650-1550 a.C.): Invasión de los hicsos.
+
+REINO NUEVO (1550-1077 a.C.): Apogeo del imperio egipcio. Faraones famosos: Hatshepsut, Tutankamón, Ramsés II. Valle de los Reyes. Dinastías XVIII a XX.
+
+TERCER PERIODO INTERMEDIO (1077-664 a.C.): Decadencia y divisiones.
+
+PERIODO TARDÍO (664-332 a.C.): Invasiones asirias y persas.
+
+PERIODO PTOLEMAICO (332-30 a.C.): Conquista de Alejandro Magno. Dinastía ptolemaica. Cleopatra VII, última faraona.`,
   },
   {
-    id: 'map',
-    title: 'Mapa del Antiguo Egipto',
-    description: 'Geografía y ciudades importantes',
+    id: 'geografia',
+    title: 'Geografía del Antiguo Egipto',
+    description: 'Mapa y ubicación geográfica',
     icon: '🗺️',
-    content: 'El Antiguo Egipto se extendía a lo largo del río Nilo. Ciudades importantes incluían Menfis (capital del Reino Antiguo), Tebas (capital del Reino Nuevo) y Alejandría (periodo helenístico).',
+    content: `El Antiguo Egipto se ubicaba en el noreste de África, a lo largo del río Nilo.
+
+DIVISIONES GEOGRÁFICAS:
+
+ALTO EGIPTO: Región sur, desde Asuán hasta El Cairo. Estrecha franja de tierra fértil entre desiertos. Corona blanca (Hedyet).
+
+BAJO EGIPTO: Región norte, el Delta del Nilo. Tierra muy fértil donde el Nilo se divide en varios brazos. Corona roja (Deshret).
+
+CIUDADES PRINCIPALES:
+
+MENFIS: Capital del Reino Antiguo. Centro político y religioso. Cerca de las pirámides de Giza.
+
+TEBAS (Luxor): Capital del Reino Medio y Nuevo. Templos de Karnak y Luxor. Valle de los Reyes.
+
+ALEJANDRÍA: Fundada por Alejandro Magno en 332 a.C. Faro de Alejandría (una de las 7 maravillas). Biblioteca más famosa del mundo antiguo.
+
+ABU SIMBEL: Templos monumentales de Ramsés II tallados en roca.
+
+GIZA: Complejo de las tres grandes pirámides.
+
+LÍMITES NATURALES: Egipto estaba protegido por desiertos al este y oeste, el Mar Mediterráneo al norte, y cataratas del Nilo al sur.`,
+  },
+  {
+    id: 'inventos',
+    title: 'Inventos y Aportes Egipcios',
+    description: 'Contribuciones a la civilización',
+    icon: '💡',
+    content: `Los egipcios realizaron innovaciones que usamos hasta hoy:
+
+MATEMÁTICAS Y ARQUITECTURA:
+• Sistema decimal y fracciones
+• Geometría aplicada a construcción
+• Medición de tierras (agrimensura)
+• Nivel de agua para construcción
+
+MEDICINA:
+• Primeras cirugías documentadas
+• Tratamientos para fracturas
+• Conocimiento de anatomía
+• Uso de vendajes y férulas
+• Antibióticos naturales (miel, moho)
+
+CALENDARIO Y TIEMPO:
+• Calendario solar de 365 días
+• División del año en 12 meses
+• Semanas de 10 días
+• Relojes de sol y agua
+
+ESCRITURA Y PAPEL:
+• Sistema de escritura jeroglífica
+• Papiro (precursor del papel)
+• Tinta hecha de carbón y goma
+
+AGRICULTURA:
+• Sistemas de irrigación
+• Arado tirado por bueyes
+• Silos para almacenar grano
+• Cultivo de trigo y cebada
+
+VIDA COTIDIANA:
+• Pasta de dientes y cepillos
+• Maquillaje y cosméticos
+• Pelucas elaboradas
+• Cerveza y pan con levadura
+• Anillos de boda
+• Juegos de mesa (Senet)`,
+  },
+  {
+    id: 'arte-arquitectura',
+    title: 'Arte y Arquitectura Egipcia',
+    description: 'Características del arte egipcio',
+    icon: '🎨',
+    content: `El arte egipcio tiene características únicas y distintivas:
+
+PRINCIPIOS DEL ARTE EGIPCIO:
+
+CANON DE PROPORCIONES: Figuras humanas seguían reglas estrictas. La altura debía ser 18 veces el tamaño del puño.
+
+LEY DE LA FRONTALIDAD: Cabeza y piernas de perfil, ojos y torso de frente. Esto permitía mostrar el mayor detalle posible.
+
+JERARQUÍA DE TAMAÑO: Personas importantes (faraones, dioses) se representaban más grandes que personas comunes.
+
+ARQUITECTURA MONUMENTAL:
+
+PIRÁMIDES: Tumbas masivas de piedra. Evolución desde mastabas (rectangulares) a pirámides escalonadas (Zoser) y verdaderas pirámides (Keops).
+
+TEMPLOS: Estructuras masivas con columnas gigantes. Templos de Karnak, Luxor, Abu Simbel. Muros cubiertos de jeroglíficos y relieves.
+
+OBELISCOS: Pilares de piedra de una sola pieza con punta piramidal. Cubiertos de jeroglíficos.
+
+ESCULTURA: Estatuas monumentales de faraones y dioses. Esfinge de Giza (cuerpo de león, cabeza humana).
+
+PINTURA MURAL: Decoración de tumbas y templos. Escenas de vida cotidiana, rituales religiosos, el viaje al más allá.
+
+MATERIALES: Piedra caliza, granito, basalto, oro, lapislázuli, turquesa.`,
+  },
+  {
+    id: 'escritura-lengua',
+    title: 'Sistemas de Escritura',
+    description: 'Jeroglífica, Hierática y Demótica',
+    icon: '✍️',
+    content: `Los egipcios desarrollaron tres sistemas de escritura principales:
+
+1. JEROGLÍFICA (3200 a.C. - 400 d.C.):
+• Sistema más antiguo y formal
+• Más de 700 símbolos diferentes
+• Usada en monumentos, templos y tumbas
+• Escritura sagrada ("palabras de dios")
+• Se leía de arriba abajo y de derecha a izquierda (o izquierda a derecha)
+• Combinaba ideogramas (símbolos=ideas) y fonogramas (símbolos=sonidos)
+
+2. HIERÁTICA (3000 a.C. - 600 a.C.):
+• Versión cursiva simplificada de los jeroglíficos
+• Usada por escribas para documentos cotidianos
+• Escrita con caña y tinta sobre papiro
+• Más rápida de escribir
+• Usada en textos administrativos, cartas, literatura
+
+3. DEMÓTICA (650 a.C. - 450 d.C.):
+• Sistema aún más simplificado
+• Escritura del pueblo común
+• Usada en contratos, documentos legales
+• Última fase de la escritura egipcia antigua
+
+LA PIEDRA ROSETTA:
+Descubierta en 1799, contenía el mismo texto en tres escrituras: jeroglífica, demótica y griego antiguo. Esto permitió a Jean-François Champollion descifrar los jeroglíficos en 1822.
+
+MATERIALES DE ESCRITURA:
+• Papiro: hojas hechas de la planta de papiro
+• Óstraca: fragmentos de cerámica o piedra caliza
+• Cañas de junco como plumas
+• Tinta negra (carbón) y roja (ocre)`,
+  },
+  {
+    id: 'comercio-economia',
+    title: 'Comercio y Economía',
+    description: 'Sistema económico del Antiguo Egipto',
+    icon: '💰',
+    content: `La economía egipcia se basaba en la agricultura y el comercio:
+
+AGRICULTURA (Base de la economía):
+• Cultivos principales: trigo, cebada, lino, papiro
+• Hortalizas: cebollas, ajos, lechugas, pepinos
+• Frutas: dátiles, higos, uvas, granadas
+• Ganadería: vacas, ovejas, cabras, cerdos
+• Pesca en el Nilo
+
+SISTEMA DE IMPUESTOS:
+• Los campesinos pagaban impuestos al faraón
+• Se pagaba con parte de la cosecha
+• Escribas medían y registraban las tierras
+• Durante inundaciones, trabajaban en proyectos del faraón
+
+COMERCIO:
+• Comercio interno: trueque (intercambio directo)
+• No usaban monedas hasta el periodo tardío
+• Unidad de valor: "deben" (peso de cobre/plata)
+• Comercio exterior con Nubia, Punt, Fenicia, Mesopotamia
+
+PRODUCTOS EXPORTADOS:
+• Papiro (único en Egipto)
+• Lino y tejidos
+• Grano excedente
+• Objetos de oro y joyas
+
+PRODUCTOS IMPORTADOS:
+• Madera (cedro del Líbano)
+• Incienso y mirra (de Punt)
+• Lapislázuli (de Afganistán)
+• Marfil y ébano (de África)
+• Plata (de Asia Menor)
+
+PROFESIONES:
+Campesinos, pescadores, panaderos, cerveceros, tejedores, alfareros, carpinteros, joyeros, orfebres, escultores, pintores, escribas, sacerdotes, soldados, médicos.`,
   },
 ];
 
@@ -154,28 +487,50 @@ export default function RecursosPage() {
 
         {/* Videos */}
         <TabsContent value="videos">
-          <div className="grid md:grid-cols-2 gap-6">
-            {videosEducativos.map((resource) => (
+          <div className="grid gap-6">
+            {videosEducativos.map((video) => (
               <Card
-                key={resource.id}
-                className="border-4 border-[#40E0D0] hover:shadow-2xl transition-all hover:scale-105 bg-white"
+                key={video.id}
+                className="border-4 border-[#40E0D0] bg-white"
               >
                 <CardHeader>
-                  <div className="text-6xl mb-4 text-center">{resource.icon}</div>
-                  <CardTitle className="text-2xl font-serif text-[#0f1e30] text-center font-bold">
-                    {resource.title}
-                  </CardTitle>
-                  <CardDescription className="text-center text-base text-[#1e3a5f] font-medium">
-                    {resource.description}
-                  </CardDescription>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="text-4xl">{video.icon}</div>
+                      <div>
+                        <CardTitle className="text-2xl font-serif text-[#0f1e30] font-bold">
+                          {video.title}
+                        </CardTitle>
+                        <CardDescription className="text-base text-[#1e3a5f] font-medium">
+                          {video.description}
+                        </CardDescription>
+                      </div>
+                    </div>
+                    {video.duration && (
+                      <div className="bg-[#40E0D0] text-[#0f1e30] px-3 py-1 rounded-full font-bold text-sm">
+                        ⏱️ {video.duration}
+                      </div>
+                    )}
+                  </div>
                 </CardHeader>
-                <CardContent>
-                  <Button
-                    onClick={() => openResource(resource)}
-                    className="w-full bg-gradient-to-r from-[#40E0D0] to-[#20B2AA] text-[#0f1e30] font-bold hover:shadow-lg border-2 border-[#20B2AA]"
-                  >
-                    Ver información
-                  </Button>
+                <CardContent className="space-y-4">
+                  <div className="aspect-video w-full rounded-lg overflow-hidden border-4 border-[#8B6F47] shadow-lg">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={video.videoUrl}
+                      title={video.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-4 rounded-lg border-2 border-[#C19A6B]">
+                    <p className="text-base text-[#0f1e30] leading-relaxed font-medium">
+                      {video.content}
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             ))}

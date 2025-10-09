@@ -5,6 +5,12 @@ import { usePathname } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export function Navbar() {
   const { user, userProfile, logout } = useAuth();
@@ -71,26 +77,27 @@ export function Navbar() {
         )}
 
         <div className="flex items-center gap-3">
-          {user && (
-            <>
-              {userProfile && (
-                <div className="flex items-center gap-3">
+          {user && userProfile && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-3 hover:opacity-80 transition-opacity focus:outline-none">
                   <Avatar className="hidden sm:block">
                     <AvatarFallback className="bg-[#FFD700] text-[#0f1e30] font-bold text-lg">
                       {userProfile.displayName?.charAt(0).toUpperCase() || 'E'}
                     </AvatarFallback>
                   </Avatar>
                   <span className="text-white font-semibold hidden sm:block">{userProfile.displayName}</span>
-                </div>
-              )}
-              <Button
-                onClick={logout}
-                variant="outline"
-                className="border-2 border-[#FFD700] text-[#FFD700] hover:bg-[#FFD700] hover:text-[#0f1e30] font-bold"
-              >
-                Cerrar Sesión
-              </Button>
-            </>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 bg-[#1e3a5f] border-2 border-[#FFD700]">
+                <DropdownMenuItem
+                  onClick={logout}
+                  className="text-white hover:bg-[#FFD700] hover:text-[#0f1e30] cursor-pointer font-semibold"
+                >
+                  Cerrar Sesión
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           )}
         </div>
       </div>

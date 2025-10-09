@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 
 interface Fase4Props {
   onComplete: (score: number) => void;
@@ -27,106 +26,106 @@ const ladders = {
 const questions = [
   {
     question: '🎲 ¿Dónde se formaron las primeras poblaciones del Antiguo Egipto?',
-    options: ['En las montañas', 'En las orillas del río Nilo', 'En el desierto', 'En el mar'],
+    options: ['En valles del desierto', 'En las orillas del río Nilo', 'En oasis dispersos', 'En costas del mar'],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué permitía el Nilo para el desarrollo de Egipto?',
-    options: ['Solo transporte', 'Agricultura (barro fértil), pesca, papiro y transporte', 'Solo pesca', 'Nada importante'],
+    options: ['Comunicación entre ciudades', 'Agricultura, pesca y transporte', 'Defensa natural del territorio', 'Comercio con otros imperios'],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué representaba el faraón en la sociedad egipcia?',
     options: [
-      'Solo un líder militar',
-      'Un dios en la tierra, máxima autoridad política, militar y religiosa',
-      'Un comerciante rico',
-      'Un escriba importante'
+      'Líder militar supremo',
+      'Dios viviente y autoridad absoluta',
+      'Rey elegido por nobles',
+      'Sacerdote principal'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Cuál era la base de la economía egipcia?',
-    options: ['El comercio de oro', 'La agricultura gracias al río Nilo', 'La guerra', 'La minería'],
+    options: ['El comercio de minerales', 'La agricultura del Nilo', 'La construcción de templos', 'El tributo de conquistas'],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué era el papiro y para qué se usaba?',
     options: [
-      'Solo para escribir',
-      'Planta del Nilo usada para escribir, hacer embarcaciones, cestos y sandalias',
-      'Un tipo de piedra',
-      'Un alimento'
+      'Planta para medicina',
+      'Planta para escribir y embarcaciones',
+      'Material de construcción',
+      'Alimento básico egipcio'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué sistema de transporte desarrollaron?',
     options: [
-      'Carros de caballos',
-      'Navegación con barcos de vela y remo por el Nilo',
-      'Camellos',
-      'No tenían transporte'
+      'Carros tirados por bueyes',
+      'Barcos de vela y remo',
+      'Caravanas de camellos',
+      'Caminos pavimentados'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué logro astronómico alcanzaron los egipcios?',
     options: [
-      'Viajes espaciales',
-      'Calendario solar de 365 días y división del día en 24 horas',
-      'Telescopios',
-      'Nada importante'
+      'Mapas estelares precisos',
+      'Calendario de 365 días y 24 horas',
+      'Predicción de eclipses',
+      'Alineación de templos'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué avances médicos desarrollaron?',
     options: [
-      'Vacunas',
-      'Momificación, anatomía, inhalaciones y otros tratamientos',
-      'Cirugía láser',
-      'Ninguno'
+      'Cirugía avanzada',
+      'Anatomía y técnicas de momificación',
+      'Medicina herbal completa',
+      'Tratamiento de fracturas'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué tipo de religión practicaban los egipcios?',
     options: [
-      'Monoteísta',
-      'Politeísta (múltiples dioses: Ra, Horus, Isis, Osiris, etc.)',
-      'Ateísmo',
-      'Budismo'
+      'Adoración a un dios único',
+      'Politeísta con múltiples dioses',
+      'Veneración de ancestros',
+      'Culto a la naturaleza'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Por qué momificaban a los muertos?',
     options: [
-      'Por higiene',
-      'Creían en la vida eterna y el cuerpo debía conservarse para el viaje del alma',
-      'Solo tradición',
-      'Para estudiarlos'
+      'Para preservar su memoria',
+      'Para conservar el cuerpo para la vida eterna',
+      'Como ritual de despedida',
+      'Por respeto a tradiciones'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué construcciones arquitectónicas destacan en Egipto?',
     options: [
-      'Solo casas',
-      'Pirámides, templos y tumbas monumentales',
-      'Rascacielos',
-      'Puentes'
+      'Palacios fortificados',
+      'Pirámides y templos monumentales',
+      'Ciudades amuralladas',
+      'Acueductos y canales'
     ],
     correct: 1,
   },
   {
     question: '🎲 ¿Qué significaban las pirámides?',
     options: [
-      'Solo tumbas',
-      'Símbolos de poder, eternidad y lugares para alcanzar la vida eterna',
-      'Almacenes',
-      'Fortalezas'
+      'Tumbas de faraones',
+      'Símbolos de poder y eternidad',
+      'Templos religiosos',
+      'Observatorios astronómicos'
     ],
     correct: 1,
   },

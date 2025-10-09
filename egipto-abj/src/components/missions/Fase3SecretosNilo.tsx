@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 
 interface Fase3Props {
   onComplete: (score: number) => void;
@@ -18,10 +17,10 @@ const treasureChests = [
       {
         question: '¿Qué importancia tuvo el río Nilo para el surgimiento y desarrollo de Egipto?',
         options: [
-          'Solo servía para beber agua',
-          'Fue fundamental: recurso económico (agricultura, pesca, papiro), transporte, barro fértil de inundaciones',
-          'No tuvo importancia',
-          'Solo era decorativo'
+          'Principal fuente de agua potable',
+          'Recurso económico y transporte',
+          'Frontera natural del imperio',
+          'Ruta comercial con otros reinos'
         ],
         correct: 1,
         hint: 'El ciclo de trabajo: labrar después de la crecida, sembrar en limo, cosechar'
@@ -29,20 +28,20 @@ const treasureChests = [
       {
         question: '¿Qué dejaban las inundaciones anuales del Nilo?',
         options: [
-          'Arena',
+          'Arena fina del desierto',
           'Barro fértil para la agricultura',
-          'Piedras',
-          'Sal'
+          'Minerales del río',
+          'Sedimentos rocosos'
         ],
         correct: 1,
       },
       {
         question: '¿Cuál era el ciclo de trabajo agrícola regular?',
         options: [
-          'Sembrar, regar, cosechar',
-          'Labrar después de la crecida del río, sembrar en limo depositado, cosechar',
-          'Solo cosechar',
-          'No había ciclo regular'
+          'Preparar tierra, sembrar, irrigar',
+          'Labrar tras la crecida, sembrar, cosechar',
+          'Inundar campos, plantar, recolectar',
+          'Arar el limo, cultivar, almacenar'
         ],
         correct: 1,
       },
@@ -56,20 +55,20 @@ const treasureChests = [
       {
         question: '¿Qué significado tenían las pirámides para los egipcios?',
         options: [
-          'Solo eran decoración',
-          'Tumbas monumentales y símbolos de eternidad para que el faraón alcanzara la vida eterna',
-          'Eran almacenes de alimentos',
-          'No tenían significado especial'
+          'Monumentos de poder del faraón',
+          'Tumbas y símbolos de eternidad',
+          'Templos para ceremonias religiosas',
+          'Fortalezas contra invasores'
         ],
         correct: 1,
       },
       {
         question: '¿Por qué momificaban a sus muertos?',
         options: [
-          'Por tradición sin sentido',
-          'Para conservar el cuerpo intacto y permitir que el alma viajara a la vida eterna',
-          'Solo por higiene',
-          'Para estudiarlos'
+          'Para honrar a los antepasados',
+          'Para conservar el cuerpo para la vida eterna',
+          'Para preservar la memoria del difunto',
+          'Por respeto a las tradiciones'
         ],
         correct: 1,
       },
@@ -83,40 +82,40 @@ const treasureChests = [
       {
         question: '¿Qué avances en medicina desarrollaron los egipcios?',
         options: [
-          'Ninguno',
-          'Técnicas de momificación, conocimientos de anatomía, métodos como inhalaciones',
-          'Solo cirugías modernas',
-          'Vacunas'
+          'Cirugía básica y herbolaria',
+          'Anatomía, momificación e inhalaciones',
+          'Tratamientos con minerales',
+          'Vendajes y fracturas'
         ],
         correct: 1,
       },
       {
         question: '¿Qué permitieron los cálculos matemáticos y observaciones astronómicas?',
         options: [
-          'Nada importante',
-          'Medir el periodo solar de 365 días y dividir el día en 24 horas',
-          'Solo contar personas',
-          'Predecir el clima'
+          'Construir monumentos alineados',
+          'Crear calendario de 365 días y 24 horas',
+          'Predecir las inundaciones del Nilo',
+          'Navegar por el desierto de noche'
         ],
         correct: 1,
       },
       {
         question: '¿Qué minerales distinguieron los egipcios?',
         options: [
-          'Solo hierro',
-          'Oro, plata, aleación de cobre, bronce, plomo, hierro',
-          'Diamantes',
-          'Uranio'
+          'Cobre, hierro y estaño',
+          'Oro, plata, bronce y hierro',
+          'Piedras preciosas variadas',
+          'Metales del desierto'
         ],
         correct: 1,
       },
       {
         question: '¿Qué artes desarrollaron los egipcios?',
         options: [
-          'Solo pintura',
-          'Pintura, escultura sobre piedra (ultratumba), arquitectura (pirámides, templos, tumbas)',
-          'Solo música',
-          'Teatro moderno'
+          'Escultura y cerámica decorativa',
+          'Pintura, escultura y arquitectura',
+          'Música y danza ritual',
+          'Textiles y joyería fina'
         ],
         correct: 1,
       },
