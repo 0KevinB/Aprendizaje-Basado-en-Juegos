@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 interface Fase4Props {
   onComplete: (score: number) => void;
+  onProgressUpdate?: (progress: number, data?: Record<string, unknown>) => void;
+  savedProgress?: Record<string, unknown> | null;
 }
 
 const boardSize = 36; // 6x6 board
@@ -138,7 +140,7 @@ const roleDescriptions = [
   { role: '🛡️ Guardián', description: 'Defiende en caso de empate' },
 ];
 
-export function Fase4GranRetoNilo({ onComplete }: Fase4Props) {
+export function Fase4GranRetoNilo({ onComplete, onProgressUpdate, savedProgress }: Fase4Props) {
   const [playerPosition, setPlayerPosition] = useState(1);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -150,6 +152,35 @@ export function Fase4GranRetoNilo({ onComplete }: Fase4Props) {
   const [diceRoll, setDiceRoll] = useState<number | null>(null);
 
   const currentQuestion = questions[currentQuestionIndex];
+
+  // Load saved progress on mount
+  useEffect(() => {
+    if (savedProgress) {
+      if (savedProgress.playerPosition !== undefined) {
+        setPlayerPosition(savedProgress.playerPosition as number);
+      }
+      if (savedProgress.currentQuestionIndex !== undefined) {
+        setCurrentQuestionIndex(savedProgress.currentQuestionIndex as number);
+      }
+      if (savedProgress.score !== undefined) {
+        setScore(savedProgress.score as number);
+      }
+      setShowNarrative(false);
+    }
+  }, [savedProgress]);
+
+  // Auto-save progress when position changes
+  useEffect(() => {
+    const progressPercentage = (playerPosition / boardSize) * 100;
+
+    if (onProgressUpdate && playerPosition > 1 && playerPosition < boardSize) {
+      onProgressUpdate(progressPercentage, {
+        playerPosition,
+        currentQuestionIndex,
+        score,
+      });
+    }
+  }, [playerPosition, currentQuestionIndex, score, onProgressUpdate]);
 
   const handleAnswer = () => {
     if (selectedAnswer === null) return;

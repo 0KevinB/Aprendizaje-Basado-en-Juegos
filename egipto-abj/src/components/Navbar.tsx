@@ -25,9 +25,9 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#1e3a5f] to-[#0f1e30] border-b-4 border-[#FFD700] shadow-lg">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <span className="text-5xl" style={{ filter: 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))' }}>𓂀</span>
-          <h1 className="text-2xl md:text-3xl font-serif font-bold text-[#FFD700]">
-            Aventura en el Antiguo Egipto
+          <span className="text-5xl" style={{ filter: 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))' }}>🌍</span>
+          <h1 className="text-xl md:text-2xl font-serif font-bold text-[#FFD700]">
+            Civilizaciones Antiguas
           </h1>
         </Link>
 
@@ -44,34 +44,14 @@ export function Navbar() {
               Inicio
             </Link>
             <Link
-              href="/misiones"
+              href="/imperios"
               className={`transition-colors font-bold text-base px-3 py-2 rounded-md ${
-                isActive('/misiones')
+                isActive('/imperios')
                   ? 'bg-[#FFD700] text-[#0f1e30]'
                   : 'text-white hover:text-[#FFD700]'
               }`}
             >
-              Misiones
-            </Link>
-            <Link
-              href="/progreso"
-              className={`transition-colors font-bold text-base px-3 py-2 rounded-md ${
-                isActive('/progreso')
-                  ? 'bg-[#FFD700] text-[#0f1e30]'
-                  : 'text-white hover:text-[#FFD700]'
-              }`}
-            >
-              Mi Progreso
-            </Link>
-            <Link
-              href="/recursos"
-              className={`transition-colors font-bold text-base px-3 py-2 rounded-md ${
-                isActive('/recursos')
-                  ? 'bg-[#FFD700] text-[#0f1e30]'
-                  : 'text-white hover:text-[#FFD700]'
-              }`}
-            >
-              Recursos
+              Civilizaciones
             </Link>
           </nav>
         )}

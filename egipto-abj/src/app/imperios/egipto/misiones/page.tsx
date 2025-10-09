@@ -59,7 +59,7 @@ const missions: Mission[] = [
   },
 ];
 
-export default function MisionesPage() {
+export default function EgiptoMisionesPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
   const [userProgress, setUserProgress] = useState<{
@@ -70,16 +70,22 @@ export default function MisionesPage() {
   const [loadingProgress, setLoadingProgress] = useState(true);
 
   useEffect(() => {
-    // Redirect to new empire structure
-    router.push('/imperios/egipto/misiones');
+    if (!loading && !user) {
+      router.push('/');
+      return;
+    }
+
+    if (user) {
+      loadUserProgress();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user, loading]);
 
   const loadUserProgress = async () => {
     if (!user) return;
 
     try {
-      const progressDoc = await getDoc(doc(db, 'userProgress', user.uid));
+      const progressDoc = await getDoc(doc(db, 'userProgress', user.uid, 'empires', 'egipto'));
       if (progressDoc.exists()) {
         const data = progressDoc.data();
         setUserProgress({
@@ -123,8 +129,9 @@ export default function MisionesPage() {
   return (
     <main className="container mx-auto px-4 py-12">
       <section className="text-center mb-12">
+        <div className="text-7xl mb-4">𓂀</div>
         <h1 className="text-5xl md:text-6xl font-serif font-bold text-[var(--dark-blue)] mb-4">
-          Misiones del Explorador
+          Misiones de Egipto
         </h1>
         <p className="text-xl text-[var(--dark-blue)]">
           Completa las misiones y desbloquea el conocimiento del Antiguo Egipto
@@ -136,7 +143,7 @@ export default function MisionesPage() {
         )}
       </section>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {missions.map((mission) => {
           const { locked, progress } = getMissionStatus(mission);
           const completed = userProgress?.completedMissions?.includes(mission.id);
@@ -174,7 +181,7 @@ export default function MisionesPage() {
                 <div>
                   <div className="flex justify-between text-sm mb-2 font-semibold">
                     <span className="text-[#0f1e30]">Progreso</span>
-                    <span className="text-[#B8860B]">{progress}%</span>
+                    <span className="text-[#B8860B]">{Math.round(progress)}%</span>
                   </div>
                   <Progress value={progress} className="h-3" />
                 </div>
@@ -190,7 +197,7 @@ export default function MisionesPage() {
                   )}
                 </div>
 
-                <Link href={`/juego/${mission.id}`}>
+                <Link href={`/imperios/egipto/juego/${mission.id}`}>
                   <Button
                     className={`w-full text-lg font-bold ${
                       locked

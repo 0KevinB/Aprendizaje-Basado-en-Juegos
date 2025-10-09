@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 interface Fase3Props {
   onComplete: (score: number) => void;
+  onProgressUpdate?: (progress: number, data?: Record<string, unknown>) => void;
+  savedProgress?: Record<string, unknown> | null;
 }
 
 const treasureChests = [
@@ -130,12 +132,41 @@ const roleDescriptions = [
   { role: '📢 Vocero', description: 'Presenta las conclusiones' },
 ];
 
-export function Fase3SecretosNilo({ onComplete }: Fase3Props) {
+export function Fase3SecretosNilo({ onComplete, onProgressUpdate, savedProgress }: Fase3Props) {
   const [currentChest, setCurrentChest] = useState<number | null>(null);
   const [chestAnswers, setChestAnswers] = useState<Record<number, Record<number, number>>>({});
   const [completedChests, setCompletedChests] = useState<number[]>([]);
   const [showNarrative, setShowNarrative] = useState(true);
   const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+  // Load saved progress on mount
+  useEffect(() => {
+    if (savedProgress) {
+      if (savedProgress.currentChest !== undefined) {
+        setCurrentChest(savedProgress.currentChest as number | null);
+      }
+      if (savedProgress.chestAnswers) {
+        setChestAnswers(savedProgress.chestAnswers as Record<number, Record<number, number>>);
+      }
+      if (savedProgress.completedChests) {
+        setCompletedChests(savedProgress.completedChests as number[]);
+      }
+      setShowNarrative(false);
+    }
+  }, [savedProgress]);
+
+  // Auto-save progress when chests are completed
+  useEffect(() => {
+    const progressPercentage = (completedChests.length / 3) * 100;
+
+    if (onProgressUpdate && completedChests.length > 0 && completedChests.length < 3) {
+      onProgressUpdate(progressPercentage, {
+        currentChest,
+        chestAnswers,
+        completedChests,
+      });
+    }
+  }, [completedChests, currentChest, chestAnswers, onProgressUpdate]);
 
   const handleAnswer = (chestId: number, questionIdx: number, answerIdx: number) => {
     setChestAnswers(prev => ({

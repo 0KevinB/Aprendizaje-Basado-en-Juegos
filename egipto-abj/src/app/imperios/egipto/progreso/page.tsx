@@ -11,31 +11,35 @@ import { db } from '@/lib/firebase';
 import { UserProgress, Achievement } from '@/types';
 
 const achievements: Achievement[] = [
-  { id: 'scribe', title: 'Escriba', description: 'Completa la misión de Jeroglíficos', icon: '🏺', unlocked: false },
-  { id: 'builder', title: 'Constructor', description: 'Completa la misión de Pirámides', icon: '🏗️', unlocked: false },
-  { id: 'pharaoh', title: 'Faraón Junior', description: 'Completa la misión de Faraones', icon: '👑', unlocked: false },
-  { id: 'priest', title: 'Sacerdote', description: 'Completa la misión de Dioses', icon: '🐱', unlocked: false },
-  { id: 'historian', title: 'Historiador', description: 'Completa la misión de Vida Cotidiana', icon: '📚', unlocked: false },
-  { id: 'embalmer', title: 'Momificador', description: 'Completa la misión de Momificación', icon: '⚰️', unlocked: false },
+  { id: 'secreto-nilo', title: 'Sello del Escriba', description: 'Completa la Fase 1: El Secreto del Nilo', icon: '🏺', unlocked: false },
+  { id: 'consejo-faraon', title: 'Sello del Consejo', description: 'Completa la Fase 2: Consejo del Faraón', icon: '👑', unlocked: false },
+  { id: 'secretos-nilo', title: 'Sello del Guardián', description: 'Completa la Fase 3: Secretos del Nilo', icon: '🏺', unlocked: false },
+  { id: 'gran-reto-nilo', title: 'Sello Eterno', description: 'Completa la Fase 4: Gran Reto del Nilo', icon: '⚱️', unlocked: false },
 ];
 
-export default function ProgresoPage() {
+export default function EgiptoProgresoPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
   const [userProgress, setUserProgress] = useState<UserProgress | null>(null);
   const [loadingProgress, setLoadingProgress] = useState(true);
 
   useEffect(() => {
-    // Redirect to new empire structure
-    router.push('/imperios/egipto/progreso');
+    if (!loading && !user) {
+      router.push('/');
+      return;
+    }
+
+    if (user) {
+      loadUserProgress();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user, loading]);
 
   const loadUserProgress = async () => {
     if (!user) return;
 
     try {
-      const progressDoc = await getDoc(doc(db, 'userProgress', user.uid));
+      const progressDoc = await getDoc(doc(db, 'userProgress', user.uid, 'empires', 'egipto'));
       if (progressDoc.exists()) {
         setUserProgress(progressDoc.data() as UserProgress);
       }
@@ -55,11 +59,11 @@ export default function ProgresoPage() {
   }
 
   const getLevel = (points: number) => {
-    if (points >= 250) return 'Maestro Egipcio';
-    if (points >= 180) return 'Experto';
-    if (points >= 120) return 'Avanzado';
-    if (points >= 60) return 'Intermedio';
-    if (points >= 20) return 'Aprendiz';
+    if (points >= 400) return 'Maestro Egipcio';
+    if (points >= 300) return 'Faraón Experto';
+    if (points >= 200) return 'Sacerdote Avanzado';
+    if (points >= 100) return 'Escriba Intermedio';
+    if (points >= 50) return 'Aprendiz';
     return 'Iniciado';
   };
 
@@ -68,25 +72,19 @@ export default function ProgresoPage() {
   const currentLevel = getLevel(totalPoints);
 
   // Actualizar logros desbloqueados
-  const unlockedAchievements = achievements.map((achievement) => {
-    const missionId = achievement.id === 'scribe' ? 'hieroglyphics'
-      : achievement.id === 'builder' ? 'pyramids'
-      : achievement.id === 'pharaoh' ? 'pharaohs'
-      : achievement.id === 'priest' ? 'gods'
-      : achievement.id === 'historian' ? 'daily-life'
-      : 'mummification';
+  const unlockedAchievements = achievements.map((achievement) => ({
+    ...achievement,
+    unlocked: completedMissions.includes(achievement.id),
+  }));
 
-    return {
-      ...achievement,
-      unlocked: completedMissions.includes(missionId),
-    };
-  });
+  const progressPercentage = (completedMissions.length / 4) * 100;
 
   return (
     <main className="container mx-auto px-4 py-12">
       <section className="text-center mb-12">
+        <div className="text-7xl mb-4">𓂀</div>
         <h1 className="text-5xl md:text-6xl font-serif font-bold text-[var(--dark-blue)] mb-4">
-          Tu Progreso
+          Tu Progreso en Egipto
         </h1>
         <p className="text-xl text-[var(--dark-blue)]">
           Sigue tu aventura a través del Antiguo Egipto
@@ -104,6 +102,7 @@ export default function ProgresoPage() {
           </CardHeader>
           <CardContent>
             <div className="text-5xl font-bold text-[#B8860B]">{totalPoints}</div>
+            <p className="text-sm text-gray-600 mt-2">de 400 puntos posibles</p>
           </CardContent>
         </Card>
 
@@ -116,8 +115,9 @@ export default function ProgresoPage() {
           </CardHeader>
           <CardContent>
             <div className="text-5xl font-bold text-[#1e7a6f]">
-              {completedMissions.length}/6
+              {completedMissions.length}/4
             </div>
+            <Progress value={progressPercentage} className="mt-4 h-3" />
           </CardContent>
         </Card>
 
@@ -129,7 +129,7 @@ export default function ProgresoPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-[#8B5A2B]">{currentLevel}</div>
+            <div className="text-2xl font-bold text-[#8B5A2B]">{currentLevel}</div>
           </CardContent>
         </Card>
       </div>
@@ -144,12 +144,12 @@ export default function ProgresoPage() {
         <CardContent>
           <div className="space-y-4">
             {[
-              { name: 'Iniciado', min: 0, max: 20 },
-              { name: 'Aprendiz', min: 20, max: 60 },
-              { name: 'Intermedio', min: 60, max: 120 },
-              { name: 'Avanzado', min: 120, max: 180 },
-              { name: 'Experto', min: 180, max: 250 },
-              { name: 'Maestro Egipcio', min: 250, max: 300 },
+              { name: 'Iniciado', min: 0, max: 50 },
+              { name: 'Aprendiz', min: 50, max: 100 },
+              { name: 'Escriba Intermedio', min: 100, max: 200 },
+              { name: 'Sacerdote Avanzado', min: 200, max: 300 },
+              { name: 'Faraón Experto', min: 300, max: 400 },
+              { name: 'Maestro Egipcio', min: 400, max: 400 },
             ].map((level) => {
               const progress =
                 totalPoints < level.min
@@ -178,33 +178,36 @@ export default function ProgresoPage() {
         </CardContent>
       </Card>
 
-      {/* Achievements */}
-      <Card className="border-4 border-[var(--gold)] bg-white/90 backdrop-blur">
+      {/* Achievements - Sellos */}
+      <Card className="border-4 border-[#FFD700] bg-white/90 backdrop-blur mb-12">
         <CardHeader>
-          <CardTitle className="text-3xl font-serif text-[var(--dark-blue)] text-center">
-            Logros Desbloqueados
+          <CardTitle className="text-3xl font-serif text-[#0f1e30] text-center">
+            Sellos Obtenidos
           </CardTitle>
           <CardDescription className="text-center text-lg">
-            {unlockedAchievements.filter((a) => a.unlocked).length} de {achievements.length} logros
+            {unlockedAchievements.filter((a) => a.unlocked).length} de {achievements.length} sellos
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {unlockedAchievements.map((achievement) => (
               <div
                 key={achievement.id}
-                className={`p-4 rounded-xl border-4 text-center transition-all ${
+                className={`p-6 rounded-xl border-4 text-center transition-all ${
                   achievement.unlocked
-                    ? 'border-[var(--gold)] bg-gradient-to-br from-yellow-50 to-yellow-100 hover:scale-105 shadow-lg'
+                    ? 'border-[#FFD700] bg-gradient-to-br from-yellow-50 to-yellow-100 hover:scale-105 shadow-lg'
                     : 'border-gray-300 bg-gray-100 opacity-40'
                 }`}
               >
-                <div className="text-5xl mb-2">{achievement.icon}</div>
-                <div className="font-semibold text-sm text-[var(--dark-blue)]">
+                <div className="text-6xl mb-3">{achievement.icon}</div>
+                <div className="font-bold text-base text-[#0f1e30] mb-1">
                   {achievement.title}
                 </div>
+                <div className="text-xs text-gray-600 mb-2">
+                  {achievement.description}
+                </div>
                 {achievement.unlocked && (
-                  <Badge className="mt-2 bg-green-500 text-white">✓</Badge>
+                  <Badge className="mt-2 bg-green-500 text-white">✓ Desbloqueado</Badge>
                 )}
               </div>
             ))}
@@ -214,9 +217,9 @@ export default function ProgresoPage() {
 
       {/* Mission Details */}
       {userProgress && Object.keys(userProgress.missionProgress || {}).length > 0 && (
-        <Card className="mt-12 border-4 border-[var(--turquoise)] bg-white/90 backdrop-blur">
+        <Card className="border-4 border-[#40E0D0] bg-white/90 backdrop-blur">
           <CardHeader>
-            <CardTitle className="text-3xl font-serif text-[var(--dark-blue)] text-center">
+            <CardTitle className="text-3xl font-serif text-[#0f1e30] text-center">
               Detalles de Misiones
             </CardTitle>
           </CardHeader>
@@ -225,24 +228,25 @@ export default function ProgresoPage() {
               {Object.entries(userProgress.missionProgress || {}).map(([missionId, progress]) => (
                 <div
                   key={missionId}
-                  className="p-4 rounded-lg border-2 border-[var(--sand)] bg-white"
+                  className="p-6 rounded-lg border-3 border-[#C19A6B] bg-gradient-to-br from-white to-[#FFF8DC]"
                 >
-                  <h3 className="font-semibold text-lg text-[var(--dark-blue)] mb-2 capitalize">
-                    {missionId.replace('-', ' ')}
+                  <h3 className="font-bold text-xl text-[#0f1e30] mb-3 capitalize">
+                    {missionId.replace(/-/g, ' ')}
                   </h3>
-                  <div className="space-y-2 text-sm">
+                  <div className="space-y-3 text-base">
                     <div className="flex justify-between">
-                      <span>Puntuación:</span>
-                      <span className="font-bold text-[var(--gold)]">{progress.score} pts</span>
+                      <span className="font-semibold text-[#0f1e30]">Puntuación:</span>
+                      <span className="font-bold text-[#B8860B]">{progress.score} pts</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Intentos:</span>
-                      <span className="font-bold">{progress.attempts}</span>
+                      <span className="font-semibold text-[#0f1e30]">Progreso:</span>
+                      <span className="font-bold text-[#0f1e30]">{Math.round(progress.progress)}%</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Estado:</span>
-                      <Badge className={progress.completed ? 'bg-green-500' : 'bg-yellow-500'}>
-                        {progress.completed ? 'Completada' : 'En progreso'}
+                    <Progress value={progress.progress} className="h-2" />
+                    <div className="flex justify-between items-center">
+                      <span className="font-semibold text-[#0f1e30]">Estado:</span>
+                      <Badge className={completedMissions.includes(missionId) ? 'bg-green-500' : 'bg-yellow-500'}>
+                        {completedMissions.includes(missionId) ? '✓ Completada' : '⏳ En progreso'}
                       </Badge>
                     </div>
                   </div>

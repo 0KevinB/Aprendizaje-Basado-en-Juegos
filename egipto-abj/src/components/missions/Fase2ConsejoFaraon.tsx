@@ -1,12 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 interface Fase2Props {
   onComplete: (score: number) => void;
+  onProgressUpdate?: (progress: number, data?: Record<string, unknown>) => void;
+  savedProgress?: Record<string, unknown> | null;
 }
 
 const socialClasses = [
@@ -76,7 +78,7 @@ const roleDescriptions = [
   { role: '📢 Vocero', description: 'Presenta las respuestas del equipo' },
 ];
 
-export function Fase2ConsejoFaraon({ onComplete }: Fase2Props) {
+export function Fase2ConsejoFaraon({ onComplete, onProgressUpdate, savedProgress }: Fase2Props) {
   const [currentActivity, setCurrentActivity] = useState(0);
   const [pyramidOrder, setPyramidOrder] = useState<number[]>([1, 2, 3, 4, 5]);
   const [crosswordAnswers, setCrosswordAnswers] = useState<string[]>(Array(6).fill(''));
@@ -91,6 +93,44 @@ export function Fase2ConsejoFaraon({ onComplete }: Fase2Props) {
     '📝 Crucigrama Egipcio',
     '🎯 Trivia del Consejo',
   ];
+
+  // Load saved progress on mount
+  useEffect(() => {
+    if (savedProgress) {
+      if (savedProgress.currentActivity !== undefined) {
+        setCurrentActivity(savedProgress.currentActivity as number);
+      }
+      if (savedProgress.pyramidOrder) {
+        setPyramidOrder(savedProgress.pyramidOrder as number[]);
+      }
+      if (savedProgress.crosswordAnswers) {
+        setCrosswordAnswers(savedProgress.crosswordAnswers as string[]);
+      }
+      if (savedProgress.triviaAnswers) {
+        setTriviaAnswers(savedProgress.triviaAnswers as number[]);
+      }
+      if (savedProgress.activitiesCompleted) {
+        setActivitiesCompleted(savedProgress.activitiesCompleted as boolean[]);
+      }
+      setShowNarrative(false);
+    }
+  }, [savedProgress]);
+
+  // Auto-save progress when activities are completed
+  useEffect(() => {
+    const completedCount = activitiesCompleted.filter(Boolean).length;
+    const progressPercentage = (completedCount / activitiesCompleted.length) * 100;
+
+    if (onProgressUpdate && completedCount > 0 && completedCount < activitiesCompleted.length) {
+      onProgressUpdate(progressPercentage, {
+        currentActivity,
+        pyramidOrder,
+        crosswordAnswers,
+        triviaAnswers,
+        activitiesCompleted,
+      });
+    }
+  }, [activitiesCompleted, currentActivity, onProgressUpdate, pyramidOrder, crosswordAnswers, triviaAnswers]);
 
   const movePyramidItem = (fromIndex: number, direction: 'up' | 'down') => {
     const newOrder = [...pyramidOrder];

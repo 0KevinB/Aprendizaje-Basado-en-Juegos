@@ -1,12 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 
 interface Fase1Props {
   onComplete: (data: { teamName: string; hieroglyphics: string; explanation: string }) => void;
+  onProgressUpdate?: (progress: number, data?: Record<string, unknown>) => void;
+  savedProgress?: Record<string, unknown> | null;
 }
 
 const egyptianAlphabet = [
@@ -45,11 +47,42 @@ const roleDescriptions = [
   { role: '📚 Historiador', description: 'Investiga y contextualiza la cultura egipcia' },
 ];
 
-export function Fase1AlphabetoEgipcio({ onComplete }: Fase1Props) {
+export function Fase1AlphabetoEgipcio({ onComplete, onProgressUpdate, savedProgress }: Fase1Props) {
   const [teamName, setTeamName] = useState('');
   const [selectedHieroglyphs, setSelectedHieroglyphs] = useState<string[]>([]);
   const [explanation, setExplanation] = useState('');
   const [showNarrative, setShowNarrative] = useState(true);
+
+  // Load saved progress on mount
+  useEffect(() => {
+    if (savedProgress) {
+      if (savedProgress.teamName) {
+        setTeamName(savedProgress.teamName as string);
+      }
+      if (savedProgress.selectedHieroglyphs) {
+        setSelectedHieroglyphs(savedProgress.selectedHieroglyphs as string[]);
+      }
+      if (savedProgress.explanation) {
+        setExplanation(savedProgress.explanation as string);
+      }
+      setShowNarrative(false);
+    }
+  }, [savedProgress]);
+
+  // Auto-save progress when teamName or explanation changes
+  useEffect(() => {
+    let progressPercentage = 0;
+    if (teamName.length > 0) progressPercentage += 50;
+    if (explanation.length > 20) progressPercentage += 50;
+
+    if (onProgressUpdate && progressPercentage > 0 && progressPercentage < 100) {
+      onProgressUpdate(progressPercentage, {
+        teamName,
+        selectedHieroglyphs,
+        explanation,
+      });
+    }
+  }, [teamName, selectedHieroglyphs, explanation, onProgressUpdate]);
 
   const addHieroglyph = (hieroglyph: string, letter: string) => {
     setSelectedHieroglyphs([...selectedHieroglyphs, hieroglyph]);
