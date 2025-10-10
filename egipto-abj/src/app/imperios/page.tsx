@@ -40,8 +40,8 @@ const empires = [
     bgColor: 'bg-gradient-to-br from-[#FFE5B4] to-[#FFDAB9]',
     textColor: 'text-[#8B4000]',
     description: 'Viaja al valle del Indo y sus grandes imperios',
-    features: ['Filosofía Védica', 'Matemáticas', 'Arquitectura'],
-    available: false,
+    features: ['4 Misiones Épicas', 'Hinduismo y Budismo', 'Sistema Decimal y Cero'],
+    available: true,
   },
   {
     id: 'china',

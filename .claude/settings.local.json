@@ -15,7 +15,8 @@
       "Bash(pandoc:*)",
       "Bash(unzip:*)",
       "WebSearch",
-      "WebFetch(domain:www.youtube.com)"
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
