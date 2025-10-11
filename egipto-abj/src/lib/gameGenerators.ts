@@ -709,6 +709,491 @@ export function generateGranRetoNiloQuestions(count: number = 20): GameQuestion[
   return shuffle(questions).slice(0, count);
 }
 
+// ============================================================================
+// MESOPOTAMIA - MISIÓN 1: Mapa de los ríos eternos (AVENTURA)
+// Actividad: Rompecabezas + ubicación geográfica + preguntas reflexivas
+// ============================================================================
+export function generateMapaRiosEternosQuestions(count: number = 5): GameQuestion[] {
+  const questions: GameQuestion[] = [
+    {
+      id: 'ubicacion-mesopotamia',
+      type: 'fill-blank',
+      question: 'Usando el mapa armado, marca correctamente la ubicación de Mesopotamia y dibuja los ríos Tigris y Éufrates. Identifica las ciudades: Uruk, Lagash y Ur.',
+      correctAnswer: '', // Validación manual
+      points: 30,
+      hint: 'Mesopotamia significa "tierra entre ríos"',
+    },
+    {
+      id: 'aventura-meso-1',
+      type: 'multiple-choice',
+      question: '¿Por qué crees que los ríos Tigris y Éufrates fueron clave para el surgimiento de Mesopotamia?',
+      options: [
+        'Porque eran bonitos',
+        'Porque proporcionaban agua para riego, transporte y barro fértil para la agricultura',
+        'Porque había muchos peces',
+        'Porque separaban territorios'
+      ],
+      correctAnswer: 'Porque proporcionaban agua para riego, transporte y barro fértil para la agricultura',
+      points: 20,
+      hint: 'El agua era vida en medio del desierto',
+    },
+    {
+      id: 'aventura-meso-2',
+      type: 'multiple-choice',
+      question: '¿Qué permitió que Mesopotamia fuera llamada "cuna de la humanidad"?',
+      options: [
+        'Por tener muchas pirámides',
+        'Por desarrollar la primera escritura, leyes codificadas y ciudades organizadas',
+        'Por ser muy grande',
+        'Por tener oro'
+      ],
+      correctAnswer: 'Por desarrollar la primera escritura, leyes codificadas y ciudades organizadas',
+      points: 20,
+      hint: 'Fue pionera en muchos aspectos de la civilización',
+    },
+    {
+      id: 'aventura-meso-3',
+      type: 'multiple-choice',
+      question: '¿Qué papel jugaban las ciudades-estado como Uruk, Ur y Lagash en Mesopotamia?',
+      options: [
+        'Eran solo pueblos pequeños',
+        'Eran centros políticos, económicos y religiosos independientes',
+        'No tenían importancia',
+        'Eran colonias de Egipto'
+      ],
+      correctAnswer: 'Eran centros políticos, económicos y religiosos independientes',
+      points: 20,
+      hint: 'Cada ciudad tenía su propio gobierno y dios protector',
+    },
+  ];
+
+  return questions.slice(0, count);
+}
+
+// ============================================================================
+// MESOPOTAMIA - MISIÓN 2: Los guardianes del saber (EXPLORACIÓN)
+// Actividad: Clasificación de reliquias en categorías (política, economía, cultura)
+// ============================================================================
+export function generateGuardianesSaberQuestions(count: number = 15): GameQuestion[] {
+  const questions: GameQuestion[] = [
+    // Clasificación: POLÍTICA
+    {
+      id: 'clasificacion-politica-1',
+      type: 'multiple-choice',
+      question: '📜 Clasifica: El Código de Hammurabi pertenece a la categoría de...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Política',
+      points: 15,
+      hint: 'Es un conjunto de leyes y normas de gobierno',
+    },
+    {
+      id: 'clasificacion-politica-2',
+      type: 'multiple-choice',
+      question: '📜 Clasifica: El gobierno teocrático (rey como representante divino) es...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Política',
+      points: 15,
+    },
+    {
+      id: 'clasificacion-politica-3',
+      type: 'multiple-choice',
+      question: '📜 Clasifica: Sargón de Acad y la unificación del imperio es...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Política',
+      points: 15,
+      hint: 'Fue el primer gran conquistador mesopotámico',
+    },
+
+    // Clasificación: ECONOMÍA
+    {
+      id: 'clasificacion-economia-1',
+      type: 'multiple-choice',
+      question: '💰 Clasifica: Los canales de irrigación pertenecen a...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Economía',
+      points: 15,
+      hint: 'Permitían la agricultura y el comercio',
+    },
+    {
+      id: 'clasificacion-economia-2',
+      type: 'multiple-choice',
+      question: '💰 Clasifica: El comercio en mercados y el trueque es...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Economía',
+      points: 15,
+    },
+    {
+      id: 'clasificacion-economia-3',
+      type: 'multiple-choice',
+      question: '💰 Clasifica: La agricultura de cebada y trigo es...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Economía',
+      points: 15,
+    },
+    {
+      id: 'clasificacion-economia-4',
+      type: 'fill-blank',
+      question: '💰 La base de la economía mesopotámica era la ____ gracias a los ríos',
+      correctAnswer: 'agricultura',
+      points: 10,
+    },
+
+    // Clasificación: CULTURA
+    {
+      id: 'clasificacion-cultura-1',
+      type: 'multiple-choice',
+      question: '🎨 Clasifica: La escritura cuneiforme pertenece a...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Cultura',
+      points: 15,
+      hint: 'Es un sistema de escritura en tablillas de arcilla',
+    },
+    {
+      id: 'clasificacion-cultura-2',
+      type: 'multiple-choice',
+      question: '🎨 Clasifica: Los zigurats (templos escalonados) son...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Cultura',
+      points: 15,
+    },
+    {
+      id: 'clasificacion-cultura-3',
+      type: 'multiple-choice',
+      question: '🎨 Clasifica: La Epopeya de Gilgamesh es...',
+      options: ['Política', 'Economía', 'Cultura', 'Ninguna'],
+      correctAnswer: 'Cultura',
+      points: 15,
+      hint: 'Es el primer poema épico de la humanidad',
+    },
+    {
+      id: 'clasificacion-cultura-4',
+      type: 'fill-blank',
+      question: '🎨 Los ____ eran escribas que dominaban la escritura cuneiforme',
+      correctAnswer: 'escribas',
+      points: 10,
+    },
+    {
+      id: 'clasificacion-cultura-5',
+      type: 'multiple-choice',
+      question: '🎨 ¿Qué dioses principales adoraban en Mesopotamia?',
+      options: [
+        'Ra y Osiris',
+        'Marduk, Ishtar (Inanna), Anu y Enlil',
+        'Zeus y Hera',
+        'Ninguno'
+      ],
+      correctAnswer: 'Marduk, Ishtar (Inanna), Anu y Enlil',
+      points: 20,
+    },
+
+    // Frase final
+    {
+      id: 'frase-legado',
+      type: 'fill-blank',
+      question: 'Completa la frase del legado: "El legado eterno de ____"',
+      correctAnswer: 'Mesopotamia',
+      points: 25,
+    },
+  ];
+
+  return shuffle(questions).slice(0, count);
+}
+
+// ============================================================================
+// MESOPOTAMIA - MISIÓN 3: La línea del tiempo perdida (DOMINIO)
+// Actividad: Dominó cronológico con eventos históricos
+// ============================================================================
+export function generateLineaTiempoPerdidaQuestions(count: number = 10): GameQuestion[] {
+  const questions: GameQuestion[] = [
+    {
+      id: 'cronologia-1',
+      type: 'ordering',
+      question: '📅 Ordena cronológicamente los siguientes eventos de Mesopotamia',
+      options: [
+        'Llegada de los sumerios (3500 a.C.)',
+        'Fundación de Uruk por Enmerkar',
+        'Invención de la escritura cuneiforme (3200 a.C.)',
+        'Imperio de Sargón de Acad (2334 a.C.)',
+        'Código de Hammurabi (1750 a.C.)'
+      ],
+      correctAnswer: [
+        'Llegada de los sumerios (3500 a.C.)',
+        'Fundación de Uruk por Enmerkar',
+        'Invención de la escritura cuneiforme (3200 a.C.)',
+        'Imperio de Sargón de Acad (2334 a.C.)',
+        'Código de Hammurabi (1750 a.C.)'
+      ],
+      points: 30,
+      hint: 'Los sumerios fueron los primeros',
+    },
+    {
+      id: 'cronologia-2',
+      type: 'multiple-choice',
+      question: '¿Quién fue Enmerkar?',
+      options: [
+        'Un escriba famoso',
+        'Fundador de Uruk y constructor de templos para Inanna',
+        'Un comerciante',
+        'Un agricultor'
+      ],
+      correctAnswer: 'Fundador de Uruk y constructor de templos para Inanna',
+      points: 15,
+    },
+    {
+      id: 'cronologia-3',
+      type: 'fill-blank',
+      question: 'La ____ cuneiforme fue el primer sistema de escritura del mundo',
+      correctAnswer: 'escritura',
+      points: 10,
+    },
+    {
+      id: 'cronologia-4',
+      type: 'multiple-choice',
+      question: '¿Quién fue Sargón de Acad?',
+      options: [
+        'Un poeta',
+        'El rey de los cuatro confines que unificó Mesopotamia bajo un imperio',
+        'Un sacerdote',
+        'Un escultor'
+      ],
+      correctAnswer: 'El rey de los cuatro confines que unificó Mesopotamia bajo un imperio',
+      points: 20,
+      hint: 'Creó el primer estado centralizado',
+    },
+    {
+      id: 'cronologia-5',
+      type: 'multiple-choice',
+      question: '¿Qué estableció el Código de Hammurabi?',
+      options: [
+        'Recetas de cocina',
+        'Leyes escritas en piedra que establecían justicia según la escala social',
+        'Instrucciones de construcción',
+        'Oraciones religiosas'
+      ],
+      correctAnswer: 'Leyes escritas en piedra que establecían justicia según la escala social',
+      points: 20,
+    },
+    {
+      id: 'cronologia-6',
+      type: 'multiple-choice',
+      question: '¿Qué inventos tecnológicos desarrollaron los mesopotámicos?',
+      options: [
+        'Solo la escritura',
+        'La rueda, sistemas de irrigación, sello cilíndrico, astronomía y álgebra',
+        'El teléfono',
+        'La electricidad'
+      ],
+      correctAnswer: 'La rueda, sistemas de irrigación, sello cilíndrico, astronomía y álgebra',
+      points: 25,
+    },
+    {
+      id: 'cronologia-7',
+      type: 'fill-blank',
+      question: 'Las ciudades mesopotámicas como Ur, Lagash y ____ eran ciudades-estado independientes',
+      correctAnswer: 'Nippur',
+      points: 10,
+    },
+    {
+      id: 'cronologia-8',
+      type: 'multiple-choice',
+      question: '¿Qué calendario desarrollaron los mesopotámicos?',
+      options: [
+        'Calendario solar',
+        'Calendario lunar que regulaba los rituales',
+        'No tenían calendario',
+        'Calendario actual'
+      ],
+      correctAnswer: 'Calendario lunar que regulaba los rituales',
+      points: 15,
+    },
+  ];
+
+  return questions.slice(0, count);
+}
+
+// ============================================================================
+// MESOPOTAMIA - MISIÓN 4: El legado eterno (CONQUISTA)
+// Actividad: Bingo mesopotámico con aportes culturales
+// ============================================================================
+export function generateLegadoEternoQuestions(count: number = 20): GameQuestion[] {
+  const questions: GameQuestion[] = [
+    // Basado en el listado de 40 aportes del documento
+    {
+      id: 'bingo-1',
+      type: 'multiple-choice',
+      question: '🎲 Sistema de símbolos que usaban los escribas para registrar en tablillas de arcilla',
+      options: ['Jeroglíficos', 'Escritura cuneiforme', 'Alfabeto latino', 'Números romanos'],
+      correctAnswer: 'Escritura cuneiforme',
+      points: 15,
+    },
+    {
+      id: 'bingo-2',
+      type: 'multiple-choice',
+      question: '🎲 Monumento religioso en forma de torre escalonada en honor a los dioses',
+      options: ['Pirámide', 'Zigurat', 'Templo griego', 'Catedral'],
+      correctAnswer: 'Zigurat',
+      points: 15,
+    },
+    {
+      id: 'bingo-3',
+      type: 'fill-blank',
+      question: '🎲 Antiguo conjunto de normas legales grabadas en piedra por Hammurabi: Código de ____',
+      correctAnswer: 'Hammurabi',
+      points: 10,
+    },
+    {
+      id: 'bingo-4',
+      type: 'multiple-choice',
+      question: '🎲 Primer poema épico de la humanidad sobre un rey sumerio',
+      options: ['La Ilíada', 'Epopeya de Gilgamesh', 'La Odisea', 'Beowulf'],
+      correctAnswer: 'Epopeya de Gilgamesh',
+      points: 20,
+    },
+    {
+      id: 'bingo-5',
+      type: 'fill-blank',
+      question: '🎲 Pueblo mesopotámico considerado uno de los primeros en formar ciudades-estado: ____',
+      correctAnswer: 'Sumerios',
+      points: 10,
+    },
+    {
+      id: 'bingo-6',
+      type: 'multiple-choice',
+      question: '🎲 Sistema para aprovechar el agua de los ríos y distribuirla hacia los campos',
+      options: ['Acueductos', 'Canales de irrigación', 'Pozos', 'Represas'],
+      correctAnswer: 'Canales de irrigación',
+      points: 15,
+    },
+    {
+      id: 'bingo-7',
+      type: 'multiple-choice',
+      question: '🎲 Ciencia usada por los sacerdotes para observar los astros',
+      options: ['Astrología', 'Astronomía', 'Geografía', 'Meteorología'],
+      correctAnswer: 'Astronomía',
+      points: 15,
+    },
+    {
+      id: 'bingo-8',
+      type: 'fill-blank',
+      question: '🎲 Dios principal de Babilonia, asociado con la justicia y el orden: ____',
+      correctAnswer: 'Marduk',
+      points: 10,
+    },
+    {
+      id: 'bingo-9',
+      type: 'multiple-choice',
+      question: '🎲 División del tiempo en unidades de 60 que aún usamos hoy',
+      options: ['Sistema decimal', 'Sistema sexagesimal', 'Sistema binario', 'Sistema métrico'],
+      correctAnswer: 'Sistema sexagesimal',
+      points: 20,
+    },
+    {
+      id: 'bingo-10',
+      type: 'fill-blank',
+      question: '🎲 Cultivo básico de Mesopotamia usado para hacer pan y cerveza: ____',
+      correctAnswer: 'Cebada',
+      points: 10,
+    },
+    {
+      id: 'bingo-11',
+      type: 'multiple-choice',
+      question: '🎲 Figura mítica con cuerpo de toro, alas de águila y rostro humano',
+      options: ['Esfinge', 'Lamassu', 'Minotauro', 'Quimera'],
+      correctAnswer: 'Lamassu',
+      points: 20,
+    },
+    {
+      id: 'bingo-12',
+      type: 'multiple-choice',
+      question: '🎲 Organización social donde el rey y los sacerdotes tenían el mayor poder',
+      options: ['Democracia', 'Teocracia', 'República', 'Monarquía simple'],
+      correctAnswer: 'Teocracia',
+      points: 15,
+    },
+    {
+      id: 'bingo-13',
+      type: 'fill-blank',
+      question: '🎲 Elemento cilíndrico usado para sellar documentos con imágenes: Sello ____',
+      correctAnswer: 'cilíndrico',
+      points: 10,
+    },
+    {
+      id: 'bingo-14',
+      type: 'multiple-choice',
+      question: '🎲 Diosa del amor y la guerra en la mitología mesopotámica',
+      options: ['Afrodita', 'Ishtar', 'Venus', 'Atenea'],
+      correctAnswer: 'Ishtar',
+      points: 15,
+    },
+    {
+      id: 'bingo-15',
+      type: 'multiple-choice',
+      question: '🎲 Ciudad-estado considerada cuna de la civilización y del urbanismo',
+      options: ['Babilonia', 'Uruk', 'Atenas', 'Roma'],
+      correctAnswer: 'Uruk',
+      points: 15,
+    },
+    {
+      id: 'bingo-16',
+      type: 'fill-blank',
+      question: '🎲 Instrumento que usaban los escribas para escribir sobre arcilla: ____',
+      correctAnswer: 'estilete',
+      points: 10,
+    },
+    {
+      id: 'bingo-17',
+      type: 'multiple-choice',
+      question: '🎲 Narración mitológica sobre el origen de los dioses y el universo',
+      options: ['Génesis', 'Enuma Elish', 'Rig Veda', 'Teogonía'],
+      correctAnswer: 'Enuma Elish',
+      points: 20,
+    },
+    {
+      id: 'bingo-18',
+      type: 'multiple-choice',
+      question: '🎲 Pueblo guerrero que construyó un imperio con capital en Nínive',
+      options: ['Babilonios', 'Asirios', 'Persas', 'Hititas'],
+      correctAnswer: 'Asirios',
+      points: 15,
+    },
+    {
+      id: 'bingo-19',
+      type: 'matching',
+      question: '🎲 Relaciona cada invento mesopotámico con su uso',
+      options: [
+        'Escritura cuneiforme',
+        'Rueda',
+        'Sistema de irrigación',
+        'Código de Hammurabi',
+        'Zigurat'
+      ],
+      correctAnswer: [
+        'Registrar leyes, historias y economía',
+        'Transporte de mercancías y producción',
+        'Distribución de agua para agricultura',
+        'Primeras leyes escritas de la humanidad',
+        'Templo para adorar a los dioses'
+      ],
+      points: 25,
+    },
+    {
+      id: 'bingo-20',
+      type: 'multiple-choice',
+      question: '🎲 ¿Cuál es el legado más importante de Mesopotamia?',
+      options: [
+        'Solo sus edificios',
+        'Ser la cuna de la escritura, las leyes, las ciudades organizadas y el pensamiento científico',
+        'Sus guerras',
+        'Su riqueza en oro'
+      ],
+      correctAnswer: 'Ser la cuna de la escritura, las leyes, las ciudades organizadas y el pensamiento científico',
+      points: 30,
+    },
+  ];
+
+  return shuffle(questions).slice(0, count);
+}
+
 // Función principal para generar preguntas según el tipo de juego
 export function generateGameQuestions(gameType: GameType, count?: number): GameQuestion[] {
   switch (gameType) {
@@ -720,6 +1205,14 @@ export function generateGameQuestions(gameType: GameType, count?: number): GameQ
       return generateSecretosNiloQuestions(count || 10);
     case 'gran-reto-nilo':
       return generateGranRetoNiloQuestions(count || 20);
+    case 'mapa-rios-eternos':
+      return generateMapaRiosEternosQuestions(count || 5);
+    case 'guardianes-saber':
+      return generateGuardianesSaberQuestions(count || 15);
+    case 'linea-tiempo-perdida':
+      return generateLineaTiempoPerdidaQuestions(count || 10);
+    case 'legado-eterno':
+      return generateLegadoEternoQuestions(count || 20);
     default:
       return [];
   }

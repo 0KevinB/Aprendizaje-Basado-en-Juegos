@@ -16,7 +16,8 @@
       "Bash(unzip:*)",
       "WebSearch",
       "WebFetch(domain:www.youtube.com)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "WebFetch(domain:appangea.com)"
     ],
     "deny": [],
     "ask": []

@@ -28,8 +28,8 @@ const empires = [
     bgColor: 'bg-gradient-to-br from-[#F4A460] to-[#DEB887]',
     textColor: 'text-[#2C1810]',
     description: 'Descubre la cuna de la civilización entre dos ríos',
-    features: ['Escritura Cuneiforme', 'Código de Hammurabi', 'Ziggurats'],
-    available: false,
+    features: ['4 Misiones Épicas', 'Código de Hammurabi', 'Escritura Cuneiforme'],
+    available: true,
   },
   {
     id: 'india',

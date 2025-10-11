@@ -356,7 +356,7 @@ export function Fase1RioSagrado({ onComplete, onProgressUpdate, savedProgress }:
 
       {/* Completion Modal */}
       {showCompletion && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-gradient-to-br from-[#faf9f7] to-[#E6D5B8] flex items-center justify-center z-50 p-4">
           <Card className="border-4 border-[#F7931E] bg-gradient-to-br from-[#FFF8F0] to-[#FFE4D1] max-w-2xl w-full">
             <CardHeader>
               <CardTitle className="text-3xl font-serif text-[#8B4000] text-center">
@@ -409,14 +409,14 @@ export function Fase1RioSagrado({ onComplete, onProgressUpdate, savedProgress }:
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="flex gap-4">
                 {!hasPassed && (
                   <Button
                     onClick={() => {
                       setShowCompletion(false);
                       resetGame();
                     }}
-                    className="w-full bg-gradient-to-r from-[#8B4000] to-[#6B3410] text-white text-lg py-6 font-bold border-3 border-[#F7931E] hover:shadow-xl transition-all"
+                    className="flex-1 bg-gradient-to-r from-[#8B4000] to-[#6B3410] text-white text-lg py-6 font-bold border-3 border-[#F7931E] hover:shadow-xl transition-all"
                   >
                     🔄 Intentar de Nuevo
                   </Button>
@@ -425,8 +425,7 @@ export function Fase1RioSagrado({ onComplete, onProgressUpdate, savedProgress }:
                   onClick={handleComplete}
                   disabled={!hasPassed}
                   className={`
-                    ${hasPassed ? 'col-span-2' : 'col-span-1'}
-                    w-full bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white text-lg py-6 font-bold
+                    ${hasPassed ? 'w-full' : 'flex-1'} bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white text-lg py-6 font-bold
                     border-3 border-[#8B4000] hover:shadow-xl transition-all
                     disabled:opacity-50 disabled:cursor-not-allowed
                   `}

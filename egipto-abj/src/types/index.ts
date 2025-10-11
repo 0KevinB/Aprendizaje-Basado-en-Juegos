@@ -41,7 +41,11 @@ export type GameType =
   | 'secreto-nilo'
   | 'consejo-faraon'
   | 'secretos-nilo'
-  | 'gran-reto-nilo';
+  | 'gran-reto-nilo'
+  | 'mapa-rios-eternos'
+  | 'guardianes-saber'
+  | 'linea-tiempo-perdida'
+  | 'legado-eterno';
 
 export interface GameQuestion {
   id: string;
