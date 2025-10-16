@@ -243,6 +243,14 @@ El dashboard permite a los estudiantes ver su progreso general y detallado por c
 
 ---
 
+## 🌟 Créditos
+
+Metodología de Estudio: Stalin Tapia  
+Desarrollo Web y Base de Datos: Kevin Barrazueta  
+© 2025
+
+---
+
 **Desarrollado con 💛 para transformar la educación**
 
-*Versión 2.0 - 2025*
+*Versión 2.0*

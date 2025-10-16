@@ -33,7 +33,14 @@ export default function RootLayout({
       >
         <AuthProvider>
           <Navbar />
-          {children}
+          <main>{children}</main>
+          <footer className="w-full bg-[#2C3E50] text-white py-4 mt-16">
+            <div className="container mx-auto text-center text-sm text-gray-400">
+              <p>Metodología de estudio por Stalin Tapia</p>
+              <p>Desarrollo por Kevin Barrazueta</p>
+              <p>© 2025</p>
+            </div>
+          </footer>
         </AuthProvider>
       </body>
     </html>
