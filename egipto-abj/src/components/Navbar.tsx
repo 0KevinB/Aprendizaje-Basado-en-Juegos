@@ -22,11 +22,11 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#1e3a5f] to-[#0f1e30] border-b-4 border-[#FFD700] shadow-lg">
+    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#34495E] to-[#2C3E50] border-b-4 border-[#3498DB] shadow-lg">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <span className="text-5xl" style={{ filter: 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.6))' }}>🌍</span>
-          <h1 className="text-xl md:text-2xl font-serif font-bold text-[#FFD700]">
+          <span className="text-5xl" style={{ filter: 'drop-shadow(0 0 8px rgba(52, 152, 219, 0.6))' }}>🌍</span>
+          <h1 className="text-xl md:text-2xl font-serif font-bold text-white">
             Civilizaciones Antiguas
           </h1>
         </Link>
@@ -37,8 +37,8 @@ export function Navbar() {
               href="/"
               className={`transition-colors font-bold text-base px-3 py-2 rounded-md ${
                 isActive('/') && pathname === '/'
-                  ? 'bg-[#FFD700] text-[#0f1e30]'
-                  : 'text-white hover:text-[#FFD700]'
+                  ? 'bg-[#3498DB] text-white'
+                  : 'text-[#ECF0F1] hover:text-white hover:bg-white/10'
               }`}
             >
               Inicio
@@ -47,8 +47,8 @@ export function Navbar() {
               href="/imperios"
               className={`transition-colors font-bold text-base px-3 py-2 rounded-md ${
                 isActive('/imperios')
-                  ? 'bg-[#FFD700] text-[#0f1e30]'
-                  : 'text-white hover:text-[#FFD700]'
+                  ? 'bg-[#3498DB] text-white'
+                  : 'text-[#ECF0F1] hover:text-white hover:bg-white/10'
               }`}
             >
               Civilizaciones
@@ -62,17 +62,17 @@ export function Navbar() {
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center gap-3 hover:opacity-80 transition-opacity focus:outline-none">
                   <Avatar className="hidden sm:block">
-                    <AvatarFallback className="bg-[#FFD700] text-[#0f1e30] font-bold text-lg">
+                    <AvatarFallback className="bg-[#3498DB] text-white font-bold text-lg">
                       {userProfile.displayName?.charAt(0).toUpperCase() || 'E'}
                     </AvatarFallback>
                   </Avatar>
                   <span className="text-white font-semibold hidden sm:block">{userProfile.displayName}</span>
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 bg-[#1e3a5f] border-2 border-[#FFD700]">
+              <DropdownMenuContent align="end" className="w-48 bg-[#34495E] border-2 border-[#3498DB]">
                 <DropdownMenuItem
                   onClick={logout}
-                  className="text-white hover:bg-[#FFD700] hover:text-[#0f1e30] cursor-pointer font-semibold"
+                  className="text-white hover:bg-[#3498DB] focus:bg-[#3498DB] focus:text-white cursor-pointer font-semibold"
                 >
                   Cerrar Sesión
                 </DropdownMenuItem>

@@ -45,7 +45,11 @@ export type GameType =
   | 'mapa-rios-eternos'
   | 'guardianes-saber'
   | 'linea-tiempo-perdida'
-  | 'legado-eterno';
+  | 'legado-eterno'
+  | 'mandato-cielo'
+  | 'consejo-dragon'
+  | 'secretos-gran-muralla'
+  | 'go-imperio';
 
 export interface GameQuestion {
   id: string;

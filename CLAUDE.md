@@ -75,6 +75,7 @@ The app uses Next.js App Router with a nested civilization-based structure:
 
 ### Game System Architecture
 
+Continua a
 **Mission Components**:
 
 - Egypt: `ConsejoFaraon.tsx`, `SecretoNilo.tsx`, `SecretosNilo.tsx`, `GranRetoNilo.tsx`

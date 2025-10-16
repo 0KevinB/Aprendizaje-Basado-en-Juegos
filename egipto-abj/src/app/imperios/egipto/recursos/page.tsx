@@ -123,76 +123,22 @@ interface VideoResource extends Resource {
 
 const videosEducativos: VideoResource[] = [
   {
-    id: 'video-antiguo-egipto',
-    title: 'EL ANTIGUO EGIPTO | Vídeos Educativos para Niños',
-    description: 'Introducción completa al Antiguo Egipto',
-    icon: '🎥',
-    videoUrl: 'https://www.youtube.com/embed/5qXgipbSuYY',
-    duration: '5:39',
-    content: 'Video educativo que explica de manera didáctica la importancia del Río Nilo como fuente de vida, los faraones, la construcción de pirámides, los dioses egipcios como Bastet y el dios Halcón, y la organización social de esta fascinante civilización.',
+    id: 'video-academia-play',
+    title: 'El Antiguo Egipto en 13 minutos',
+    description: 'Un resumen de Academia Play, ideal para una introducción rápida.',
+    icon: '▶️',
+    videoUrl: 'https://www.youtube.com/embed/6a_gIpv_XD4',
+    duration: '13:56',
+    content: 'Un resumen conciso y visualmente atractivo de los 3000 años de historia del Antiguo Egipto, cubriendo sus tres grandes períodos: el Imperio Antiguo, el Imperio Medio y el Imperio Nuevo.',
   },
   {
-    id: 'video-jeroglificos',
-    title: 'Jeroglíficos Egipcios - Cómo Funcionaban',
-    description: 'Descubre el sistema de escritura egipcio',
-    icon: '📜',
-    videoUrl: 'https://www.youtube.com/embed/zOwP0KUlnZg',
-    duration: '10:24',
-    content: 'Explicación detallada sobre cómo funcionaban los jeroglíficos egipcios, incluyendo el alfabeto jeroglífico, símbolos fonéticos y pictóricos, y el papel fundamental de los escribas en la sociedad del Antiguo Egipto.',
-  },
-  {
-    id: 'video-nilo',
-    title: 'El Río Nilo - Geografía del Antiguo Egipto',
-    description: 'La importancia del Nilo para Egipto',
-    icon: '🌊',
-    videoUrl: 'https://www.youtube.com/embed/lCv_MLla4gA',
-    duration: '8:15',
-    content: 'Documental educativo sobre el Río Nilo, sus inundaciones anuales, cómo el limo fértil permitía la agricultura, y por qué los egipcios llamaban a su tierra "Kemet" (tierra negra). Incluye información sobre geografía y transporte fluvial.',
-  },
-  {
-    id: 'video-piramides',
-    title: 'Las Pirámides de Egipto - Construcción',
-    description: 'Cómo se construyeron las pirámides',
-    icon: '🔺',
-    videoUrl: 'https://www.youtube.com/embed/TJEhRB7prqI',
-    duration: '12:30',
-    content: 'Video que explica el proceso de construcción de las pirámides, desmintiendo mitos sobre esclavos y mostrando las técnicas reales utilizadas: rampas, palancas, trineos y organización laboral. Incluye datos sobre la Gran Pirámide de Keops.',
-  },
-  {
-    id: 'video-dioses',
-    title: 'Dioses Egipcios - Mitología',
-    description: 'Los principales dioses del Antiguo Egipto',
-    icon: '🏺',
-    videoUrl: 'https://www.youtube.com/embed/fZlMIb9DYAE',
-    duration: '15:20',
-    content: 'Recorrido por los principales dioses egipcios: Ra (dios del sol), Osiris (inframundo), Isis (magia), Anubis (momificación), Horus (cielo), Thoth (sabiduría) y Bastet (protección del hogar). Explica sus roles y representaciones.',
-  },
-  {
-    id: 'video-momificacion',
-    title: 'Momificación en el Antiguo Egipto',
-    description: 'El proceso de preservación de los cuerpos',
-    icon: '⚰️',
-    videoUrl: 'https://www.youtube.com/embed/JACoS_OxwAY',
-    duration: '11:45',
-    content: 'Explicación paso a paso del proceso de momificación que tomaba 70 días. Incluye información sobre la extracción de órganos, el uso de natrón, el vendaje del cuerpo, los vasos canopos y las creencias egipcias sobre la vida eterna.',
-  },
-  {
-    id: 'video-faraones',
-    title: 'Los Faraones y la Pirámide Social Egipcia',
-    description: 'Estructura social del Antiguo Egipto',
-    icon: '👑',
-    videoUrl: 'https://www.youtube.com/embed/VN7qCe9Uqfc',
-    duration: '9:30',
-    content: 'Video educativo sobre la organización social egipcia en forma de pirámide: faraón, sacerdotes y nobles, escribas, artesanos y comerciantes, campesinos y esclavos. Explica el rol divino del faraón y la rigidez de la estructura social.',
-  },
-  {
-    id: 'video-vida-cotidiana',
-    title: 'La Vida Cotidiana en el Antiguo Egipto',
-    description: 'Cómo vivían los egipcios',
-    icon: '🏠',
-    videoUrl: 'https://www.youtube.com/embed/2hi08tOUkUM',
-    duration: '13:15',
-    content: 'Documental sobre la vida diaria de los egipcios: sus casas, alimentación, vestimenta, juegos, educación y trabajo. Muestra las diferencias entre la vida de nobles y campesinos, y costumbres como el uso de maquillaje y pelucas.',
+    id: 'video-documental-completo',
+    title: 'LA HISTORIA COMPLETA de Antiguo Egipto | Documental',
+    description: 'Un documental detallado para profundizar en la civilización egipcia.',
+    icon: '🎬',
+    videoUrl: 'https://www.youtube.com/embed/Q7zMDgnluoQ',
+    duration: '1:37:15',
+    content: 'Este documental explora en profundidad la historia, cultura, religión y legado de la civilización que surgió a orillas del Nilo, desde sus orígenes hasta su caída.',
   },
 ];
 
@@ -428,7 +374,7 @@ export default function RecursosPage() {
       </section>
 
       <Tabs defaultValue="biblioteca" className="w-full">
-        <TabsList className="grid w-full grid-cols-4 mb-8 bg-transparent p-0 gap-2 h-auto">
+        <TabsList className="grid w-full grid-cols-3 mb-8 bg-transparent p-0 gap-2 h-auto">
           <TabsTrigger
             value="biblioteca"
             className="data-[state=active]:bg-[#FFD700] data-[state=active]:text-[#0f1e30] data-[state=active]:border-[#FFD700] bg-[#C19A6B] text-white text-lg font-bold transition-all py-4 rounded-lg border-4 border-transparent hover:border-[#FFD700] hover:bg-[#D4A76A]"
@@ -446,12 +392,6 @@ export default function RecursosPage() {
             className="data-[state=active]:bg-[#FFD700] data-[state=active]:text-[#0f1e30] data-[state=active]:border-[#FFD700] bg-[#C19A6B] text-white text-lg font-bold transition-all py-4 rounded-lg border-4 border-transparent hover:border-[#FFD700] hover:bg-[#D4A76A]"
           >
             🎮 Actividades
-          </TabsTrigger>
-          <TabsTrigger
-            value="objetivos"
-            className="data-[state=active]:bg-[#FFD700] data-[state=active]:text-[#0f1e30] data-[state=active]:border-[#FFD700] bg-[#C19A6B] text-white text-lg font-bold transition-all py-4 rounded-lg border-4 border-transparent hover:border-[#FFD700] hover:bg-[#D4A76A]"
-          >
-            🎯 Objetivos
           </TabsTrigger>
         </TabsList>
 
@@ -564,187 +504,6 @@ export default function RecursosPage() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </TabsContent>
-
-        {/* Objetivos Educativos */}
-        <TabsContent value="objetivos">
-          <div className="space-y-8">
-            {/* Información Institucional */}
-            <Card className="border-4 border-[#FFD700] bg-gradient-to-br from-[#f5f1e8] to-[#E6BE8A]">
-              <CardHeader>
-                <CardTitle className="text-3xl font-serif text-[#0f1e30] text-center">
-                  📋 Información del Programa Educativo
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Institución</h3>
-                    <p className="text-[#1e3a5f]">UNIDADES EDUCATIVAS MUNICIPALES DE LOJA</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Área</h3>
-                    <p className="text-[#1e3a5f]">Ciencias Sociales</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Grado</h3>
-                    <p className="text-[#1e3a5f]">Octavo Año EGB</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border-2 border-[#C19A6B]">
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Asignatura</h3>
-                    <p className="text-[#1e3a5f]">Estudios Sociales</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Objetivo de la Unidad */}
-            <Card className="border-4 border-[#40E0D0] bg-white">
-              <CardHeader>
-                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
-                  🎯 Objetivo de la Unidad Didáctica
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-6 rounded-lg border-2 border-[#C19A6B]">
-                  <p className="text-lg text-[#0f1e30] font-semibold leading-relaxed">
-                    Conocer los aportes culturales de las primeras civilizaciones y su influencia en la actualidad.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Destreza con Criterio de Desempeño */}
-            <Card className="border-4 border-[#FFD700] bg-white">
-              <CardHeader>
-                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
-                  📚 Destreza con Criterio de Desempeño
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gradient-to-r from-[#FFD700] to-[#E6BE8A] p-6 rounded-lg border-2 border-[#B8860B]">
-                  <div className="mb-3">
-                    <span className="font-bold text-[#0f1e30] text-lg">CS.H.5.1.16.</span>
-                  </div>
-                  <p className="text-base text-[#0f1e30] font-semibold leading-relaxed">
-                    Describir y valorar los grandes aportes de la cultura de Egipto al desarrollo tecnológico,
-                    económico y científico desde la perspectiva de su condición de &quot;cuna de la humanidad&quot;.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Indicador de Evaluación */}
-            <Card className="border-4 border-[#CD7F32] bg-white">
-              <CardHeader>
-                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
-                  ✅ Indicador de Evaluación de la Unidad
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gradient-to-r from-[#CD7F32] to-[#D4A76A] p-6 rounded-lg border-2 border-[#A0522D]">
-                  <div className="mb-3">
-                    <span className="font-bold text-white text-lg">I.CS.H.5.5.1.</span>
-                  </div>
-                  <p className="text-base text-white font-semibold leading-relaxed">
-                    Describe los aportes tecnológicos, económicos y científicos de la cultura de Egipto
-                    y su impacto en el mundo contemporáneo. (J.1., J.4., I.1.)
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Aportes del Antiguo Egipto */}
-            <Card className="border-4 border-[#40E0D0] bg-white">
-              <CardHeader>
-                <CardTitle className="text-2xl font-serif text-[#0f1e30]">
-                  💡 Principales Aportes del Antiguo Egipto
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
-                    <div className="text-4xl mb-3 text-center">🏗️</div>
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Tecnológicos</h3>
-                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
-                      <li>Construcción con piedra tallada</li>
-                      <li>Sistemas de riego y agricultura</li>
-                      <li>Navegación fluvial</li>
-                      <li>Técnicas de momificación</li>
-                    </ul>
-                  </div>
-                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
-                    <div className="text-4xl mb-3 text-center">💰</div>
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Económicos</h3>
-                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
-                      <li>Sistema de comercio organizado</li>
-                      <li>Agricultura planificada</li>
-                      <li>Primeras formas de impuestos</li>
-                      <li>Especialización laboral</li>
-                    </ul>
-                  </div>
-                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
-                    <div className="text-4xl mb-3 text-center">🔬</div>
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Científicos</h3>
-                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
-                      <li>Medicina avanzada y cirugía</li>
-                      <li>Astronomía y calendario solar</li>
-                      <li>Matemáticas y geometría</li>
-                      <li>Química y embalsamamiento</li>
-                    </ul>
-                  </div>
-                  <div className="bg-gradient-to-r from-[#f5f1e8] to-[#E6D5B8] p-5 rounded-lg border-2 border-[#C19A6B]">
-                    <div className="text-4xl mb-3 text-center">📖</div>
-                    <h3 className="font-bold text-lg text-[#0f1e30] mb-2">Culturales</h3>
-                    <ul className="list-disc list-inside text-[#1e3a5f] space-y-1">
-                      <li>Sistema de escritura (jeroglíficos)</li>
-                      <li>Papiro (precursor del papel)</li>
-                      <li>Arte y arquitectura monumental</li>
-                      <li>Literatura y poesía</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Metodología ABJ */}
-            <Card className="border-4 border-[#FFD700] bg-gradient-to-r from-green-50 to-green-100">
-              <CardHeader>
-                <CardTitle className="text-2xl font-serif text-green-900">
-                  🎮 Metodología: Aprendizaje Basado en Juegos (ABJ)
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-base text-green-800 leading-relaxed">
-                  Esta plataforma utiliza la metodología de <strong>Aprendizaje Basado en Juegos</strong>,
-                  que combina elementos de gamificación con objetivos educativos claros para:
-                </p>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded-lg border-2 border-green-600">
-                    <div className="text-3xl mb-2 text-center">🧠</div>
-                    <h4 className="font-bold text-green-900 mb-2 text-center">Motivar</h4>
-                    <p className="text-sm text-green-800 text-center">
-                      Aumentar el engagement y la participación activa
-                    </p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border-2 border-green-600">
-                    <div className="text-3xl mb-2 text-center">👥</div>
-                    <h4 className="font-bold text-green-900 mb-2 text-center">Colaborar</h4>
-                    <p className="text-sm text-green-800 text-center">
-                      Fomentar el trabajo en equipo y roles definidos
-                    </p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg border-2 border-green-600">
-                    <div className="text-3xl mb-2 text-center">📈</div>
-                    <h4 className="font-bold text-green-900 mb-2 text-center">Evaluar</h4>
-                    <p className="text-sm text-green-800 text-center">
-                      Medir el progreso de forma continua y formativa
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </TabsContent>
       </Tabs>

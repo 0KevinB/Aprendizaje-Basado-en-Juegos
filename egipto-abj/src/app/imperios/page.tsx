@@ -46,14 +46,15 @@ const empires = [
   {
     id: 'china',
     name: 'Antigua China',
-    icon: '龍',
+    icon: '🐉',
     color: 'from-[#DC143C] to-[#8B0000]',
     borderColor: 'border-[#DC143C]',
-    bgColor: 'bg-gradient-to-br from-[#FFE4E1] to-[#FFB6C1]',
-    textColor: 'text-[#8B0000]',
+    bgColor: 'bg-gradient-to-br from-[#FFF9E6] to-[#FFE4B5]',
+    textColor: 'text-[#6B0000]',
+    buttonTextColor: 'text-white',
     description: 'Conoce la tierra del dragón y la Gran Muralla',
-    features: ['Dinastías Imperiales', 'Inventos Antiguos', 'Filosofía'],
-    available: false,
+    features: ['4 Misiones Épicas', 'Inventos Chinos', 'Filosofía Confuciana'],
+    available: true,
   },
 ];
 
@@ -130,7 +131,7 @@ export default function EmpiresPage() {
               {empire.available ? (
                 <Link href={`/imperios/${empire.id}`} className="block">
                   <Button
-                    className={`w-full bg-gradient-to-r ${empire.color} ${empire.textColor} text-lg py-6 font-bold border-3 ${empire.borderColor} hover:shadow-xl transition-all`}
+                    className={`w-full bg-gradient-to-r ${empire.color} ${empire.buttonTextColor || empire.textColor} text-lg py-6 font-bold border-3 ${empire.borderColor} hover:shadow-xl transition-all`}
                   >
                     🚀 Explorar {empire.name}
                   </Button>
