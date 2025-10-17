@@ -199,9 +199,9 @@ export function Fase4LegadoEterno({ onComplete, onProgressUpdate, savedProgress 
           <CardContent className="space-y-4 text-[#2C1810]">
             <div className="bg-[#F5DEB3] p-6 rounded-lg border-2 border-[#8B4513]">
               <p className="text-lg leading-relaxed font-serif italic">
-                "El sol nace sobre las murallas esmaltadas de <strong>Babilonia</strong> y enciende las losas del camino procesional.
+                &quot;El sol nace sobre las murallas esmaltadas de <strong>Babilonia</strong> y enciende las losas del camino procesional.
                 El <strong>Gran Consejo de Sabios</strong> se reúne a la sombra del zigurat para celebrar el <strong>Festival del Legado</strong>,
-                la ceremonia donde se reconoce a quienes comprenden lo que Mesopotamia dio al mundo."
+                la ceremonia donde se reconoce a quienes comprenden lo que Mesopotamia dio al mundo.&quot;
               </p>
             </div>
             <p className="text-lg leading-relaxed">

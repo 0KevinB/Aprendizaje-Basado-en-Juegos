@@ -201,7 +201,11 @@ export default function JuegoPage() {
       {missionId === 'guardianes-saber' && (
         <Fase2GuardianesSaber
           onComplete={(data) => {
-            handleComplete(data);
+            handleComplete({
+              score: data.score,
+              correctAnswers: data.correctClassifications,
+              totalQuestions: data.totalRelics,
+            });
           }}
           onProgressUpdate={(progress, data) => {
             handlePartialProgress(progress, data);

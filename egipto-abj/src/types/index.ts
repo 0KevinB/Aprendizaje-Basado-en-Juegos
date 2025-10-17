@@ -49,7 +49,11 @@ export type GameType =
   | 'mandato-cielo'
   | 'consejo-dragon'
   | 'secretos-gran-muralla'
-  | 'go-imperio';
+  | 'go-imperio'
+  | 'rio-sagrado'
+  | 'consejo-loto'
+  | 'ajedrez-sabios'
+  | 'sabios-indo';
 
 export interface GameQuestion {
   id: string;

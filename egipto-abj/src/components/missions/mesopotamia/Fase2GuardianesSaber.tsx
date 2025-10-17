@@ -152,9 +152,9 @@ export function Fase2GuardianesSaber({ onComplete, onProgressUpdate, savedProgre
           <CardContent className="space-y-4 text-[#2C1810]">
             <div className="bg-[#F5DEB3] p-6 rounded-lg border-2 border-[#8B4513]">
               <p className="text-lg leading-relaxed font-serif italic">
-                "En las ruinas polvorientas de la majestuosa <strong>Babilonia</strong>, bajo capas de arena acumuladas por los siglos,
+                &quot;En las ruinas polvorientas de la majestuosa <strong>Babilonia</strong>, bajo capas de arena acumuladas por los siglos,
                 yacen las huellas de una de las civilizaciones más antiguas del mundo. Tres guardianes invisibles protegen el conocimiento:
-                el <strong>Guardián de la Política</strong>, el <strong>Guardián de la Economía</strong> y el <strong>Guardián de la Cultura</strong>."
+                el <strong>Guardián de la Política</strong>, el <strong>Guardián de la Economía</strong> y el <strong>Guardián de la Cultura</strong>.&quot;
               </p>
             </div>
             <p className="text-lg leading-relaxed">

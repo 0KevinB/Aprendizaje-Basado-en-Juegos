@@ -266,7 +266,7 @@ export function Fase4GoImperio({ onComplete, onProgressUpdate, savedProgress }: 
             <p className="text-xl text-[#8B0000] max-w-2xl mx-auto leading-relaxed">
               ¡Felicidades! Ambos equipos han demostrado sabiduría estratégica y conocimiento profundo de la China antigua.
               Ahora son <strong>Grandes Estrategas del Dragón</strong>, guardianes del legado imperial de China.
-              Como decía Sun Tzu: <em>"Vencer sin luchar es la suprema excelencia."</em>
+              Como decía Sun Tzu: <em>&quot;Vencer sin luchar es la suprema excelencia.&quot;</em>
             </p>
 
             <Button
@@ -374,9 +374,9 @@ export function Fase4GoImperio({ onComplete, onProgressUpdate, savedProgress }: 
             <div className="bg-gradient-to-r from-[#FFE4B5] to-[#FFF9E6] p-4 rounded-lg border-2 border-[#DC143C]">
               <h3 className="font-bold text-[#8B0000] mb-2">📚 Filosofía del Go:</h3>
               <p className="text-sm text-[#5C0000] italic">
-                "El Go enseña a vencer sin luchar, rodear sin atacar, y pensar siempre en el todo antes que en la parte.
+                &quot;El Go enseña a vencer sin luchar, rodear sin atacar, y pensar siempre en el todo antes que en la parte.
                 Como escribió Sun Tzu en el Arte de la Guerra: la suprema excelencia consiste en vencer al enemigo sin
-                combatir."
+                combatir.&quot;
               </p>
             </div>
           </CardContent>

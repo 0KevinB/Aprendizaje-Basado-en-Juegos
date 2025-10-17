@@ -188,8 +188,8 @@ export default function JuegoPage() {
         <Fase1MandatoCielo
           onComplete={(data) => {
             handleComplete(data.score, {
-              matchedPairs: data.matchedPairs,
-              totalPairs: data.totalPairs,
+              correctSelections: data.correctSelections,
+              totalCorrect: data.totalCorrect,
             });
           }}
           onProgressUpdate={(progress, data) => {

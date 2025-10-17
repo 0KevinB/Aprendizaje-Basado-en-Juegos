@@ -129,9 +129,9 @@ export function Fase1MapaRios({ onComplete, onProgressUpdate, savedProgress }: F
           <CardContent className="space-y-4 text-[#2C1810]">
             <div className="bg-[#F5DEB3] p-6 rounded-lg border-2 border-[#8B4513]">
               <p className="text-lg leading-relaxed font-serif italic">
-                "En el albor de los tiempos, cuando los dioses aún caminaban entre los hombres, una vasta tierra surgió entre
+                &quot;En el albor de los tiempos, cuando los dioses aún caminaban entre los hombres, una vasta tierra surgió entre
                 dos ríos sagrados: el <strong>Tigris</strong> y el <strong>Éufrates</strong>. Aquella región fértil, donde el limo
-                danzaba con el agua y la vida brotaba sin cesar, fue llamada <strong>'Mesopotamia'</strong>, la tierra entre ríos."
+                danzaba con el agua y la vida brotaba sin cesar, fue llamada <strong>&apos;Mesopotamia&apos;</strong>, la tierra entre ríos.&quot;
               </p>
             </div>
             <p className="text-lg leading-relaxed">

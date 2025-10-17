@@ -174,10 +174,10 @@ export function Fase3LineaTiempo({ onComplete, onProgressUpdate, savedProgress }
           <CardContent className="space-y-4 text-[#2C1810]">
             <div className="bg-[#F5DEB3] p-6 rounded-lg border-2 border-[#8B4513]">
               <p className="text-lg leading-relaxed font-serif italic">
-                "Los sabios de Mesopotamia han dejado fragmentos de su historia grabados en fichas de dominó de arcilla.
+                &quot;Los sabios de Mesopotamia han dejado fragmentos de su historia grabados en fichas de dominó de arcilla.
                 Cada pieza contiene una fecha y un evento histórico. Para descubrir el <strong>Sello del Tiempo</strong>,
                 deberás conectar las fichas correctamente, formando una cadena cronológica perfecta desde los
-                <strong> sumerios</strong> hasta el gran <strong>Código de Hammurabi</strong>."
+                <strong> sumerios</strong> hasta el gran <strong>Código de Hammurabi</strong>.&quot;
               </p>
             </div>
             <p className="text-lg leading-relaxed">
