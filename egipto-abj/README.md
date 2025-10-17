@@ -1,16 +1,21 @@
-# 🏺 Aventura en el Antiguo Egipto - ABJ
+# 🏛️ Imperios Antiguos - ABJ
 
-Plataforma educativa de **Aprendizaje Basado en Juegos (ABJ)** diseñada para que estudiantes de aproximadamente 12 años aprendan sobre la cultura egipcia de manera interactiva y divertida.
+Plataforma educativa de **Aprendizaje Basado en Juegos (ABJ)** diseñada para que estudiantes de aproximadamente 12 años aprendan sobre 4 grandes civilizaciones antiguas: **Egipto, Mesopotamia, India y China**, de manera interactiva y divertida.
 
 ## ✨ Características
 
-- 🎮 **6 Misiones Interactivas**: Jeroglíficos, Pirámides, Faraones, Dioses, Vida Cotidiana y Momificación
-- 🎲 **Juegos Dinámicos**: Preguntas generadas aleatoriamente para evitar memorización
-- 🏆 **Sistema de Progreso**: Puntos, niveles y logros desbloqueables
-- 🔐 **Autenticación de Usuarios**: Sistema completo con Firebase Authentication
-- 📊 **Seguimiento de Progreso**: Guarda y sincroniza el progreso de cada estudiante
-- 📱 **Diseño Responsivo**: Funciona perfectamente en móviles, tablets y desktop
-- 🎨 **Interfaz Atractiva**: Diseño temático egipcio con animaciones y efectos visuales
+- 🗺️ **4 Imperios para Explorar**: Cada uno con su propia ruta de aprendizaje.
+- 🏺 **Egipto**: Descubre los secretos de los faraones, jeroglíficos y pirámides.
+- 🧱 **Mesopotamia**: Viaja a la cuna de la civilización entre los ríos Tigris y Éufrates.
+- 🕉️ **India**: Explora el valle del Indo, su espiritualidad y avances matemáticos.
+- 🐉 **China**: Conoce las dinastías, la Gran Muralla y los guerreros de terracota.
+- 🎮 **Misiones por Fases**: Cada imperio se divide en 4 fases de aprendizaje progresivo.
+- 🎲 **Juegos Dinámicos**: Preguntas generadas aleatoriamente para evitar la memorización.
+- 🏆 **Sistema de Progreso**: Puntos, niveles y logros desbloqueables.
+- 🔐 **Autenticación de Usuarios**: Sistema completo con Firebase Authentication.
+- 📊 **Seguimiento de Progreso**: Guarda y sincroniza el progreso de cada estudiante.
+- 📱 **Diseño Responsivo**: Funciona en móviles, tablets y desktop.
+- 🎨 **Interfaz Atractiva**: Diseño temático para cada imperio con elementos interactivos.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -37,16 +42,16 @@ npm install
 ### 2. Configurar Firebase
 
 1. Ve a [Firebase Console](https://console.firebase.google.com/)
-2. Crea un nuevo proyecto o usa uno existente
-3. Habilita **Authentication** con Email/Password
-4. Crea una base de datos **Firestore**
-5. En la configuración del proyecto, ve a "Project Settings" > "General"
-6. En "Your apps", crea una aplicación web
-7. Copia las credenciales de configuración
+2. Crea un nuevo proyecto o usa uno existente.
+3. Habilita **Authentication** con Email/Password.
+4. Crea una base de datos **Firestore**.
+5. En la configuración del proyecto, ve a "Project Settings" > "General".
+6. En "Your apps", crea una aplicación web.
+7. Copia las credenciales de configuración.
 
 ### 3. Configurar variables de entorno
 
-Edita el archivo `.env.local` en la raíz del proyecto y reemplaza los valores con tus credenciales de Firebase:
+Crea un archivo `.env.local` en la raíz del proyecto y reemplaza los valores con tus credenciales de Firebase:
 
 ```env
 NEXT_PUBLIC_FIREBASE_API_KEY=tu_api_key_aqui
@@ -59,7 +64,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=tu_app_id_aqui
 
 ### 4. Configurar reglas de Firestore
 
-En Firebase Console, ve a Firestore Database > Rules y configura las siguientes reglas:
+En Firebase Console, ve a Firestore Database > Rules y configura las siguientes reglas para permitir que los usuarios autenticados gestionen su propio progreso:
 
 ```
 rules_version = '2';
@@ -90,79 +95,73 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
 ```
 egipto-abj/
-├── src/
-│   ├── app/
-│   │   ├── page.tsx              # Página principal
-│   │   ├── misiones/             # Página de misiones
-│   │   ├── juego/[missionId]/    # Juegos dinámicos
-│   │   ├── progreso/             # Página de progreso del usuario
-│   │   └── recursos/             # Recursos educativos
-│   ├── components/
-│   │   ├── ui/                   # Componentes de shadcn/ui
-│   │   ├── AuthForm.tsx          # Formulario de autenticación
-│   │   └── Navbar.tsx            # Barra de navegación
-│   ├── contexts/
-│   │   └── AuthContext.tsx       # Context de autenticación
-│   ├── lib/
-│   │   ├── firebase.ts           # Configuración de Firebase
-│   │   └── gameGenerators.ts     # Generadores de preguntas dinámicas
-│   └── types/
-│       └── index.ts              # Tipos TypeScript
-├── .env.local                    # Variables de entorno
-├── components.json               # Configuración de shadcn/ui
-└── package.json
+└── src/
+    ├── app/
+    │   ├── page.tsx                # Página de inicio (Login/Registro)
+    │   ├── globals.css             # Estilos globales
+    │   ├── layout.tsx              # Layout principal
+    │   └── imperios/
+    │       ├── page.tsx            # Selector de imperios
+    │       ├── egipto/
+    │       │   ├── page.tsx        # Dashboard de Egipto
+    │       │   ├── misiones/       # Misiones de Egipto
+    │       │   └── juego/[missionId]/ # Juego para una misión específica
+    │       ├── mesopotamia/
+    │       │   └── ... (estructura similar)
+    │       ├── india/
+    │       │   └── ... (estructura similar)
+    │       └── china/
+    │           └── ... (estructura similar)
+    ├── components/
+    │   ├── ui/                     # Componentes de shadcn/ui
+    │   ├── AuthForm.tsx            # Formulario de autenticación
+    │   ├── Navbar.tsx              # Barra de navegación principal
+    │   ├── EmpireNavbar.tsx        # Navegación dentro de un imperio
+    │   └── missions/
+    │       ├── egipto/             # Componentes de misiones de Egipto
+    │       ├── mesopotamia/        # Componentes de misiones de Mesopotamia
+    │       └── ...                 # etc.
+    ├── contexts/
+    │   └── AuthContext.tsx         # Contexto de autenticación
+    ├── lib/
+    │   ├── firebase.ts             # Configuración de Firebase
+    │   └── gameGenerators.ts       # Lógica para generar juegos y preguntas
+    └── types/
+        └── index.ts                # Tipos de TypeScript
 ```
 
 ## 🎮 Características de los Juegos
 
-### Generación Dinámica de Preguntas
+### Generación Dinámica
 
-Cada vez que un estudiante juega una misión, las preguntas se generan aleatoriamente desde un pool de datos, asegurando:
+Cada vez que un estudiante juega una misión, las actividades y preguntas se pueden generar o seleccionar de un pool de datos, asegurando:
 
-- ✅ Variedad en cada intento
-- ✅ Evita memorización de respuestas
-- ✅ Mantiene el contenido educativo fresco
+- ✅ Variedad en cada intento.
+- ✅ Evita la memorización de respuestas.
+- ✅ Mantiene el contenido educativo fresco y desafiante.
 
-### Tipos de Preguntas
+### Tipos de Actividades
 
-- **Opción múltiple**: Selecciona la respuesta correcta entre varias opciones
-- **Completar espacios**: Escribe la respuesta correcta
-- **Ordenar**: Organiza elementos en el orden correcto
-- **Emparejar**: Conecta elementos relacionados
-
-### Sistema de Puntos y Niveles
-
-| Nivel | Puntos Requeridos |
-|-------|-------------------|
-| Iniciado | 0 - 20 |
-| Aprendiz | 20 - 60 |
-| Intermedio | 60 - 120 |
-| Avanzado | 120 - 180 |
-| Experto | 180 - 250 |
-| Maestro Egipcio | 250+ |
+- **Opción múltiple**: Selecciona la respuesta correcta.
+- **Completar espacios**: Escribe la palabra o frase que falta.
+- **Ordenar secuencias**: Organiza eventos históricos o pasos de un proceso.
+- **Emparejar conceptos**: Conecta elementos relacionados (ej. dioses con sus dominios).
 
 ## 🎨 Personalización
 
 ### Agregar Nuevas Preguntas
 
-Edita `src/lib/gameGenerators.ts` y agrega datos a los arrays correspondientes:
-
-```typescript
-const hieroglyphicsData = [
-  { symbol: '𓀀', meaning: 'hombre', category: 'persona' },
-  // Agrega más aquí
-];
-```
+Edita `src/lib/gameGenerators.ts` y agrega nuevo contenido a los arrays de datos para cada imperio. La estructura es autoexplicativa dentro del archivo.
 
 ### Modificar Estilos
 
-Los colores y estilos están definidos en `src/app/globals.css` usando variables CSS:
+Los colores y estilos principales están definidos en `src/app/globals.css` usando variables CSS. Puedes adaptar la paleta de colores para que se ajuste a nuevos temas o preferencias.
 
 ```css
 :root {
-  --gold: #FFD700;
-  --dark-blue: #1e3a5f;
-  // Personaliza aquí
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  /* ... más variables */
 }
 ```
 
@@ -170,14 +169,14 @@ Los colores y estilos están definidos en `src/app/globals.css` usando variables
 
 ### Vercel (Recomendado)
 
-1. Push tu código a GitHub
-2. Conecta tu repositorio en [Vercel](https://vercel.com)
-3. Agrega las variables de entorno en la configuración del proyecto
-4. Despliega
+1. Sube tu código a un repositorio de GitHub.
+2. Conecta tu repositorio en [Vercel](https://vercel.com).
+3. Agrega las variables de entorno (`.env.local`) en la configuración del proyecto en Vercel.
+4. ¡Despliega!
 
 ### Otras Plataformas
 
-Compatible con cualquier plataforma que soporte Next.js:
+El proyecto es compatible con cualquier plataforma que soporte Next.js, como:
 - Netlify
 - Railway
 - Render
@@ -192,8 +191,8 @@ Compatible con cualquier plataforma que soporte Next.js:
 
 ## 👨‍💻 Autor
 
-Creado para facilitar el aprendizaje de la cultura egipcia mediante metodología ABJ.
+Creado para facilitar el aprendizaje de las grandes civilizaciones antiguas mediante la metodología de Aprendizaje Basado en Juegos (ABJ).
 
 ---
 
-¿Preguntas o sugerencias? ¡No dudes en contactar! 🏺✨
+¿Preguntas o sugerencias? ¡No dudes in contactar! 🏛️✨
