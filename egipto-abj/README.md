@@ -1,4 +1,4 @@
-# 🏛️ Imperios Antiguos - ABJ
+# 🏺 Aventura en la Historia Antigua - ABJ
 
 Plataforma educativa de **Aprendizaje Basado en Juegos (ABJ)** diseñada para que estudiantes de aproximadamente 12 años aprendan sobre 4 grandes civilizaciones antiguas: **Egipto, Mesopotamia, India y China**, de manera interactiva y divertida.
 
@@ -167,20 +167,7 @@ Los colores y estilos principales están definidos en `src/app/globals.css` usan
 
 ## 🚢 Despliegue
 
-### Vercel (Recomendado)
-
-1. Sube tu código a un repositorio de GitHub.
-2. Conecta tu repositorio en [Vercel](https://vercel.com).
-3. Agrega las variables de entorno (`.env.local`) en la configuración del proyecto en Vercel.
-4. ¡Despliega!
-
-### Otras Plataformas
-
-El proyecto es compatible con cualquier plataforma que soporte Next.js, como:
-- Netlify
-- Railway
-- Render
-- AWS Amplify
+Vercel
 
 ## 📚 Recursos Adicionales
 
@@ -191,7 +178,8 @@ El proyecto es compatible con cualquier plataforma que soporte Next.js, como:
 
 ## 👨‍💻 Autor
 
-Creado para facilitar el aprendizaje de las grandes civilizaciones antiguas mediante la metodología de Aprendizaje Basado en Juegos (ABJ).
+Kevin Barrazueta - 0KevinB
+Creado para facilitar el aprendizaje de la cultura egipcia mediante metodología ABJ.
 
 ---
 
