@@ -1,4 +1,4 @@
-# 🏺 Aventura en el Antiguo Egipto - ABJ
+# 🏺 Aventura en la Historia Antigua - ABJ
 
 Plataforma educativa de **Aprendizaje Basado en Juegos (ABJ)** diseñada para que estudiantes de aproximadamente 12 años aprendan sobre la cultura egipcia de manera interactiva y divertida.
 
@@ -167,22 +167,8 @@ Los colores y estilos están definidos en `src/app/globals.css` usando variables
 ```
 
 ## 🚢 Despliegue
-
-### Vercel (Recomendado)
-
-1. Push tu código a GitHub
-2. Conecta tu repositorio en [Vercel](https://vercel.com)
-3. Agrega las variables de entorno en la configuración del proyecto
-4. Despliega
-
-### Otras Plataformas
-
-Compatible con cualquier plataforma que soporte Next.js:
-- Netlify
-- Railway
-- Render
-- AWS Amplify
-
+ Vercel 
+ 
 ## 📚 Recursos Adicionales
 
 - [Next.js Documentation](https://nextjs.org/docs)
@@ -191,7 +177,7 @@ Compatible con cualquier plataforma que soporte Next.js:
 - [shadcn/ui](https://ui.shadcn.com/)
 
 ## 👨‍💻 Autor
-
+Kevin Barrazueta - 0KevinB
 Creado para facilitar el aprendizaje de la cultura egipcia mediante metodología ABJ.
 
 ---
