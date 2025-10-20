@@ -58,6 +58,44 @@ const empires = [
   },
 ];
 
+const upcomingEmpires = [
+  {
+    name: 'Persia',
+    icon: '🏺',
+    color: 'from-[#9B59B6] to-[#8E44AD]',
+  },
+  {
+    name: 'Fenicia',
+    icon: '⛵',
+    color: 'from-[#3498DB] to-[#2980B9]',
+  },
+  {
+    name: 'Grecia',
+    icon: '🏛️',
+    color: 'from-[#1E90FF] to-[#4169E1]',
+  },
+  {
+    name: 'Roma',
+    icon: '🏟️',
+    color: 'from-[#E74C3C] to-[#C0392B]',
+  },
+  {
+    name: 'Inca',
+    icon: '⛰️',
+    color: 'from-[#F39C12] to-[#E67E22]',
+  },
+  {
+    name: 'Maya',
+    icon: '🗿',
+    color: 'from-[#16A085] to-[#138D75]',
+  },
+  {
+    name: 'Azteca',
+    icon: '🦅',
+    color: 'from-[#E67E22] to-[#D35400]',
+  },
+];
+
 export default function EmpiresPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -147,6 +185,50 @@ export default function EmpiresPage() {
             </CardContent>
           </Card>
         ))}
+      </section>
+
+      {/* Coming Soon Section */}
+      <section className="mb-12 max-w-6xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#0f1e30] mb-4">
+            🚧 Próximas Civilizaciones 🚧
+          </h2>
+          <p className="text-lg md:text-xl text-[#1e3a5f] font-semibold">
+            ¡Estamos trabajando para traerte más imperios fascinantes!
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          {upcomingEmpires.map((empire, index) => (
+            <div
+              key={index}
+              className="relative group"
+            >
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 border-3 border-gray-300 hover:border-gray-400 transition-all hover:scale-105 flex flex-col items-center justify-center min-h-[140px] shadow-lg">
+                <div className="text-5xl mb-2 opacity-50 group-hover:opacity-70 transition-opacity">
+                  {empire.icon}
+                </div>
+                <h3 className="font-serif font-bold text-sm text-center text-gray-700 mb-2">
+                  {empire.name}
+                </h3>
+                <div className={`w-full h-1.5 rounded-full bg-gradient-to-r ${empire.color} opacity-50`}></div>
+              </div>
+              <div className="absolute -top-2 -right-2 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-bold shadow-md">
+                Pronto
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <div className="inline-block bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-4 border-2 border-[#FFD700] shadow-lg">
+            <p className="text-[#0f1e30] font-semibold flex items-center gap-2">
+              <span className="text-2xl">⏳</span>
+              <span>Estamos construyendo estas aventuras educativas para ti</span>
+              <span className="text-2xl">⚒️</span>
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Info Section */}

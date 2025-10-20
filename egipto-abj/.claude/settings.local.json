@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"Documentos creados en C:\\Users\\kevin\\Documents\"\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
